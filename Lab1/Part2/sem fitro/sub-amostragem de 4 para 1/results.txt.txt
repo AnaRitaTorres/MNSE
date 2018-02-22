@@ -1,0 +1,4 @@
+Erro entre o sinal original e o interpolado = 0.0186861
+
+
+PSNR do sinal interpolado = 14.3214

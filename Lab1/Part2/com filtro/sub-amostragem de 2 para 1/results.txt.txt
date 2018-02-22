@@ -1,0 +1,7 @@
+ORIGINAL
+frequencia de amostragem = 11025 ; numero de amostras = 47314
+Numero original de amostras no sinal de entrada = 47315
+
+FINAL
+Erro entre o sinal original e o interpolado = 0.00204601
+PSNR do sinal interpolado = 23.9276

@@ -1,0 +1,7 @@
+xmin = -0.7656
+
+xmin,xmax,N,Q: -0.7656    0.7656  256.0000    0.0060
+
+Erro entre o sinal original e o interpolado = 3.01389e-06
+
+PSNR do sinal interpolado = 29.5778
