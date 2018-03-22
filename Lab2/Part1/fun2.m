@@ -1,12 +1,12 @@
 function[]=fun2(ficheiroOriginal)
 
-%1-importe uma imagem com o formato bitmap (espa?o de cores RGB) e apresente essa imagem no ecr?%;
+%1-importe uma imagem com o formato bitmap (espaco de cores RGB) e apresente essa imagem no ecra
 im= imread(ficheiroOriginal);
 figure(1);
 imshow(im)
 title('Original Image'); 
 
-%2-separe cada componente RGB numa matriz diferente e apresente no ecr? cada uma delas%
+%2-separe cada componente RGB numa matriz diferente e apresente no ecra cada uma delas
 r = im(:, :, 1);
 g = im(:, :, 2);
 b = im(:, :, 3); 
@@ -23,7 +23,7 @@ figure(4);
 imshow(b)
 title('Blue Image');
 
-%3-converta essa imagem para o espa?o de cores YCbCr e apresente essa imagem no ecr?
+%3-converta essa imagem para o espaco de cores YCbCr e apresente essa imagem no ecra
 
 ycbcr = rgb2ycbcr(im);
 
@@ -31,7 +31,7 @@ figure(5);
 imshow(ycbcr)
 title('YCbCr Image');
 
-%4-separe cada componente YCbCr numa matriz diferente e apresente no ecr? cada uma delas
+%4-separe cada componente YCbCr numa matriz diferente e apresente no ecra cada uma delas
 y = ycbcr(:,:,1);
 cb = ycbcr(:,:,2);
 cr = ycbcr(:,:,3);
