@@ -35,7 +35,8 @@ threshold=input('Which threshold?'); % ask the user for a threshold
 c=zeros(height, width);
 for i=1:height
     for j=1:width
-        if(b(i,j)<threshold) c(i,j)=255;
+        if(b(i,j)<threshold)
+            c(i,j)=255;
         end
     end
 end
@@ -65,7 +66,7 @@ imhist(uint8(blueness));
 threshold=input('Which threshold?'); % ask the user for a threshold
 
 foregroundObjects=blueness<threshold;
-figure, imshow(foregroundObjects), title('segmented image using blueness');;
+figure, imshow(foregroundObjects), title('segmented image using blueness');
 % here the code to obtain the full color representation of 
 % the foreground objects
 foregroundR=zeros(height, width);
