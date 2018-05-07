@@ -29,7 +29,7 @@ DROP TABLE IF EXISTS `FavouriteCharacter`;
 CREATE TABLE `FavouriteCharacter` (
   `idUser` int(10) unsigned NOT NULL,
   `idCharacter` int(10) unsigned NOT NULL,
-  KEY `idUser` (`idUser`),
+  UNIQUE KEY `idUser_idCharacter` (`idUser`,`idCharacter`),
   KEY `idCharacter` (`idCharacter`),
   CONSTRAINT `FavouriteCharacter_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `User` (`id`),
   CONSTRAINT `FavouriteCharacter_ibfk_2` FOREIGN KEY (`idCharacter`) REFERENCES `Character` (`id`)
@@ -40,7 +40,7 @@ DROP TABLE IF EXISTS `FavouriteMovie`;
 CREATE TABLE `FavouriteMovie` (
   `idUser` int(10) unsigned NOT NULL,
   `idMovie` int(10) unsigned NOT NULL,
-  KEY `idUser` (`idUser`),
+  UNIQUE KEY `idUser_idMovie` (`idUser`,`idMovie`),
   KEY `idMovie` (`idMovie`),
   CONSTRAINT `FavouriteMovie_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `User` (`id`),
   CONSTRAINT `FavouriteMovie_ibfk_2` FOREIGN KEY (`idMovie`) REFERENCES `Movie` (`id`)
@@ -51,7 +51,7 @@ DROP TABLE IF EXISTS `Follower`;
 CREATE TABLE `Follower` (
   `idUser1` int(10) unsigned NOT NULL,
   `idUser2` int(10) unsigned NOT NULL,
-  KEY `idUser1` (`idUser1`),
+  UNIQUE KEY `idUser1_idUser2` (`idUser1`,`idUser2`),
   KEY `idUser2` (`idUser2`),
   CONSTRAINT `Follower_ibfk_1` FOREIGN KEY (`idUser1`) REFERENCES `User` (`id`),
   CONSTRAINT `Follower_ibfk_2` FOREIGN KEY (`idUser2`) REFERENCES `User` (`id`)
@@ -78,12 +78,18 @@ DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) COLLATE latin1_spanish_ci NOT NULL,
+  `email` varchar(64) COLLATE latin1_spanish_ci NOT NULL,
+  `password` varchar(64) COLLATE latin1_spanish_ci NOT NULL,
   `description` varchar(256) COLLATE latin1_spanish_ci DEFAULT NULL,
   `profile_pic` varchar(128) COLLATE latin1_spanish_ci DEFAULT NULL,
   `cover_pic` varchar(128) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `location` varchar(128) CHARACTER SET latin1 NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+  `location` varchar(128) CHARACTER SET latin1 DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
+INSERT INTO `User` (`id`, `name`, `email`, `password`, `description`, `profile_pic`, `cover_pic`, `location`) VALUES
+(1,	'Banana',	'doraemon@gmail.come',	'72b302bf297a228a75730123efef7c41',	NULL,	NULL,	NULL,	NULL)
+ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `name` = VALUES(`name`), `email` = VALUES(`email`), `password` = VALUES(`password`), `description` = VALUES(`description`), `profile_pic` = VALUES(`profile_pic`), `cover_pic` = VALUES(`cover_pic`), `location` = VALUES(`location`);
 
--- 2018-05-07 19:33:21
+-- 2018-05-07 23:22:17
