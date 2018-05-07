@@ -78,6 +78,16 @@ function register(db, info, sendFunc) {
     })
 }
 
+function login(db, info, sendFunc) {
+    var query = 'SELECT * FROM User WHERE email = ? and password = MD5(?)';
+    db.query(query, [info.email, info.password], function (err, results) {
+        if (err) {
+            sendFunc(err);
+        }
+        else sendFunc(results[0]);
+    })
+}
+
 module.exports.getUser = getUser;
 module.exports.getFollowingCount = getFollowingCount;
 module.exports.getFollowedCount = getFollowedCount;
@@ -86,3 +96,4 @@ module.exports.getFollowings = getFollowings;
 module.exports.follow = follow;
 module.exports.unfollow = unfollow;
 module.exports.register = register;
+module.exports.login = login;

@@ -125,8 +125,17 @@ app.post('/register', function (req, res) {
     require('./db/user').register(db, info, send);
 });
 //TODO
-app.get('/login', function (req, res) {
-    res.send('lmao');
+app.post('/login', function (req, res) {
+    var info = {
+        email: req.body.email,
+        password: req.body.password
+    };
+    if(info.email === undefined || info.password === undefined)
+        return res.send({success: false, content: 'Missing Parameters!'});
+    var send = function (content) {
+        require('./db/connect').sendLogin(res, content);
+    };
+    require('./db/user').login(db, info, send);
 });
 
 app.get('/getFollowerCount', function (req, res) {
@@ -204,9 +213,8 @@ app.get('/testRegister', function (req, res) {
     var request = require('request');
 
     var authOptions = {
-        url: 'http://localhost:8420/register',
+        url: 'http://localhost:8420/login',
         body: {
-            name: req.query.name,
             email: req.query.email,
             password: req.query.password
         },
