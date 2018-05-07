@@ -78,13 +78,20 @@ function register(db, info, sendFunc) {
     })
 }
 
-function login(db, info, sendFunc) {
+function login(db, info, jwt, sendFunc) {
     var query = 'SELECT * FROM User WHERE email = ? and password = MD5(?)';
     db.query(query, [info.email, info.password], function (err, results) {
         if (err) {
             sendFunc(err);
         }
-        else sendFunc(results[0]);
+        if(results[0] === undefined) return sendFunc(results[0]);
+        var obj = {
+            id: results[0].id
+        };
+        var token = jwt.sign(obj, require('../db/connect').secretString, {
+            expiresIn: 60 * 60
+        });
+        return sendFunc({token: token, id: results[0].id, name: results[0].name});
     })
 }
 

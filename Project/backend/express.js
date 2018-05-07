@@ -102,13 +102,9 @@ app.get('/getUser', function (req, res) {
     require('./db/user').getUser(db, id, send);
 });
 
+// TODO eventualmente fazer isto
 app.get('/searchUser', function (req, res) {
    res.send('rip');
-});
-
-apiRoutes.post('/updateUser', function (req, res) {
-    var id = req.body.id;
-    res.send('something' + id);
 });
 
 app.post('/register', function (req, res) {
@@ -124,7 +120,7 @@ app.post('/register', function (req, res) {
     };
     require('./db/user').register(db, info, send);
 });
-//TODO
+
 app.post('/login', function (req, res) {
     var info = {
         email: req.body.email,
@@ -135,7 +131,7 @@ app.post('/login', function (req, res) {
     var send = function (content) {
         require('./db/connect').sendLogin(res, content);
     };
-    require('./db/user').login(db, info, send);
+    require('./db/user').login(db, info, jwt, send);
 });
 
 app.get('/getFollowerCount', function (req, res) {
@@ -171,8 +167,8 @@ app.get('/getFollowings', function (req, res) {
 });
 
 apiRoutes.post('/followUser', function (req, res) {
-    var id1 = req.body.id1;
-    var id2 = req.body.id2;
+    var id1 = req.decoded.id;
+    var id2 = req.body.id;
     var send = function (content) {
         require('./db/connect').sendPost(res, content);
     };
@@ -180,8 +176,8 @@ apiRoutes.post('/followUser', function (req, res) {
 });
 
 apiRoutes.post('/unfollowUser', function (req, res) {
-    var id1 = req.body.id1;
-    var id2 = req.body.id2;
+    var id1 = req.decoded.id;
+    var id2 = req.body.id;
     var send = function (content) {
         require('./db/connect').sendPost(res, content);
     };
@@ -189,23 +185,22 @@ apiRoutes.post('/unfollowUser', function (req, res) {
 });
 
 apiRoutes.post('/addMovie', function (req, res) {
-    var id = req.body.id;
+    var id = req.decoded.id;
     res.send('something' + id);
 });
 
 apiRoutes.post('/addCharacter', function (req, res) {
-    var id = req.body.id;
+    var id = req.decoded.id;
     res.send('something' + id);
 });
 
-//TODO não sei se vai ser preciso a cena para remover mas oh well
 apiRoutes.post('/removeMovie', function (req, res) {
-    var id = req.body.id;
+    var id = req.decoded.id;
     res.send('something' + id);
 });
 
 apiRoutes.post('/removeCharacter', function (req, res) {
-    var id = req.body.id;
+    var id = req.decoded.id;
     res.send('something' + id);
 });
 
