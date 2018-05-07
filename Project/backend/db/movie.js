@@ -10,7 +10,7 @@ function getMovie(db, id, sendFunc) {
 
 function getMovies(db, sendFunc) {
     var query = 'SELECT * FROM Movie';
-    db.query(query, id, function (err, results) {
+    db.query(query, function (err, results) {
         if (err) {
             sendFunc(err);
         }

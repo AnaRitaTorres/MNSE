@@ -1,5 +1,5 @@
 function getCharacter(db, id, sendFunc) {
-    var query = 'SELECT * FROM Character WHERE id = ?';
+    var query = 'SELECT * FROM `Character` WHERE id = ?';
     db.query(query, id, function (err, results) {
         if (err) {
             sendFunc(err);
@@ -9,8 +9,8 @@ function getCharacter(db, id, sendFunc) {
 }
 
 function getCharacters(db, sendFunc) {
-    var query = 'SELECT * FROM Character';
-    db.query(query, id, function (err, results) {
+    var query = 'SELECT * FROM `Character`';
+    db.query(query, function (err, results) {
         if (err) {
             sendFunc(err);
         }

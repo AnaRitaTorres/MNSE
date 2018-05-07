@@ -67,7 +67,7 @@ app.get('/', function(req, res) {
 app.get('/getMovie', function (req, res) {
     var id = req.query.id;
     var send = function (content) {
-        res.send(require('./db/connect').sendGet(res, content));
+        require('./db/connect').sendGet(res, content);
     };
     require('./db/movie').getMovie(db, id, send);
 });
@@ -75,21 +75,21 @@ app.get('/getMovie', function (req, res) {
 app.get('/getCharacter', function (req, res) {
     var id = req.query.id;
     var send = function (content) {
-        res.send(require('./db/connect').sendGet(res, content));
+        require('./db/connect').sendGet(res, content);
     };
     require('./db/character').getCharacter(db, id, send);
 });
 
 app.get('/getMovies', function (req, res) {
     var send = function (content) {
-        res.send(require('./db/connect').sendGet(res, content));
+        require('./db/connect').sendGet(res, content);
     };
     require('./db/movie').getMovies(db, send);
 });
 
 app.get('/getCharacters', function (req, res) {
     var send = function (content) {
-        res.send(require('./db/connect').sendGet(res, content));
+        require('./db/connect').sendGet(res, content);
     };
     require('./db/character').getCharacters(db, send);
 });
@@ -97,7 +97,7 @@ app.get('/getCharacters', function (req, res) {
 app.get('/getUser', function (req, res) {
     var id = req.query.id;
     var send = function (content) {
-        res.send(require('./db/connect').sendGet(res, content));
+        require('./db/connect').sendGet(res, content);
     };
     require('./db/user').getUser(db, id, send);
 });
@@ -110,9 +110,19 @@ apiRoutes.post('/updateUser', function (req, res) {
     var id = req.body.id;
     res.send('something' + id);
 });
-//TODO
-app.get('/register', function (req, res) {
-    res.send('lmao');
+
+app.post('/register', function (req, res) {
+    var info = {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+    };
+    if(info.name === undefined || info.email === undefined || info.password === undefined)
+        return res.send({success: false, content: 'Missing Parameters!'});
+    var send = function (content) {
+        require('./db/connect').sendRegister(res, content);
+    };
+    require('./db/user').register(db, info, send);
 });
 //TODO
 app.get('/login', function (req, res) {
@@ -122,7 +132,7 @@ app.get('/login', function (req, res) {
 app.get('/getFollowerCount', function (req, res) {
     var id = req.query.id;
     var send = function (content) {
-        res.send(require('./db/connect').sendGet(res, content));
+        require('./db/connect').sendGet(res, content);
     };
     require('./db/user').getFollowedCount(db, id, send);
 });
@@ -130,7 +140,7 @@ app.get('/getFollowerCount', function (req, res) {
 app.get('/getFollowers', function (req, res) {
     var id = req.query.id;
     var send = function (content) {
-        res.send(require('./db/connect').sendGet(res, content));
+        require('./db/connect').sendGet(res, content);
     };
     require('./db/user').getFollowers(db, id, send);
 });
@@ -138,7 +148,7 @@ app.get('/getFollowers', function (req, res) {
 app.get('/getFollowingCount', function (req, res) {
     var id = req.query.id;
     var send = function (content) {
-        res.send(require('./db/connect').sendGet(res, content));
+        require('./db/connect').sendGet(res, content);
     };
     require('./db/user').getFollowingCount(db, id, send);
 });
@@ -146,7 +156,7 @@ app.get('/getFollowingCount', function (req, res) {
 app.get('/getFollowings', function (req, res) {
     var id = req.query.id;
     var send = function (content) {
-        res.send(require('./db/connect').sendGet(res, content));
+        require('./db/connect').sendGet(res, content);
     };
     require('./db/user').getFollowings(db, id, send);
 });
@@ -155,7 +165,7 @@ apiRoutes.post('/followUser', function (req, res) {
     var id1 = req.body.id1;
     var id2 = req.body.id2;
     var send = function (content) {
-        res.send(require('./db/connect').sendPost(res, content));
+        require('./db/connect').sendPost(res, content);
     };
     require('./db/user').follow(db, id1, id2, send);
 });
@@ -164,7 +174,7 @@ apiRoutes.post('/unfollowUser', function (req, res) {
     var id1 = req.body.id1;
     var id2 = req.body.id2;
     var send = function (content) {
-        res.send(require('./db/connect').sendPost(res, content));
+        require('./db/connect').sendPost(res, content);
     };
     require('./db/user').unfollow(db, id1, id2, send);
 });
@@ -188,4 +198,26 @@ apiRoutes.post('/removeMovie', function (req, res) {
 apiRoutes.post('/removeCharacter', function (req, res) {
     var id = req.body.id;
     res.send('something' + id);
+});
+
+app.get('/testRegister', function (req, res) {
+    var request = require('request');
+
+    var authOptions = {
+        url: 'http://localhost:8420/register',
+        body: {
+            name: req.query.name,
+            email: req.query.email,
+            password: req.query.password
+        },
+        json: true
+    };
+    request.post(authOptions,function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+            res.send({success: true, content: body});
+        }
+        else{
+            res.send({success: false, content: 'err'});
+        }
+    })
 });

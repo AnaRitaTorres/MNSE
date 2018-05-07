@@ -15,5 +15,16 @@ module.exports = {
     if (content === '' || content === [] || content === null || content === undefined) return res.send({success: false});
     if (content['errno'] !== undefined && content['errno'] > 0) return res.send({success: 'query error on post!', err: content});
     return res.send({success: true, content: content})
+  },
+  sendLogin: function (res, content) {
+    if (content === '' || content === [] || content === null || content === undefined) return res.send({success: false, content:'Incorrect email/password!'});
+    if (content['errno'] !== undefined && content['errno'] > 0) return res.send({success: 'query error on login!', err: content});
+    return res.send({success: true, content: content})
+  },
+  sendRegister: function (res, content) {
+    if (content === '' || content === [] || content === null || content === undefined) return res.send({success: false});
+    if (content['errno'] !== undefined && content['sqlMessage'].includes('email')) return res.send({success:false, content: 'Email already in use!'});
+    if (content['errno'] !== undefined && content['errno'] > 0) return res.send({success: 'query error on register!', err: content});
+    return res.send({success: true, content: content})
   }
 };

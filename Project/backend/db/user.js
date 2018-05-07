@@ -54,7 +54,7 @@ function follow(db, id1, id2, sendFunc) {
         if (err) {
             sendFunc(err);
         }
-        else sendFunc('lel');
+        else sendFunc(true);
     })
 }
 
@@ -64,7 +64,17 @@ function unfollow(db, id1, id2, sendFunc) {
         if (err) {
             sendFunc(err);
         }
-        else sendFunc('lel');
+        else sendFunc(true);
+    })
+}
+
+function register(db, info, sendFunc) {
+    var query = 'INSERT INTO User(name, email, password) VALUES (?,?,MD5(?))';
+    db.query(query, [info.name, info.email, info.password], function (err, results) {
+        if (err) {
+            sendFunc(err);
+        }
+        else sendFunc(results);
     })
 }
 
@@ -75,3 +85,4 @@ module.exports.getFollowers = getFollowers;
 module.exports.getFollowings = getFollowings;
 module.exports.follow = follow;
 module.exports.unfollow = unfollow;
+module.exports.register = register;
