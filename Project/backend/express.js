@@ -66,17 +66,44 @@ app.get('/', function(req, res) {
 
 app.get('/getMovie', function (req, res) {
     var id = req.query.id;
-    res.send('something' + id);
+    var send = function (content) {
+        res.send(require('./db/connect').sendGet(res, content));
+    };
+    require('./db/movie').getMovie(db, id, send);
 });
 
 app.get('/getCharacter', function (req, res) {
     var id = req.query.id;
-    res.send('something' + id);
+    var send = function (content) {
+        res.send(require('./db/connect').sendGet(res, content));
+    };
+    require('./db/character').getCharacter(db, id, send);
+});
+
+app.get('/getMovies', function (req, res) {
+    var send = function (content) {
+        res.send(require('./db/connect').sendGet(res, content));
+    };
+    require('./db/movie').getMovies(db, send);
+});
+
+app.get('/getCharacters', function (req, res) {
+    var send = function (content) {
+        res.send(require('./db/connect').sendGet(res, content));
+    };
+    require('./db/character').getCharacters(db, send);
 });
 
 app.get('/getUser', function (req, res) {
     var id = req.query.id;
-    res.send('something' + id);
+    var send = function (content) {
+        res.send(require('./db/connect').sendGet(res, content));
+    };
+    require('./db/user').getUser(db, id, send);
+});
+
+app.get('/searchUser', function (req, res) {
+   res.send('rip');
 });
 
 apiRoutes.post('/updateUser', function (req, res) {
@@ -92,9 +119,54 @@ app.get('/login', function (req, res) {
     res.send('lmao');
 });
 
+app.get('/getFollowerCount', function (req, res) {
+    var id = req.query.id;
+    var send = function (content) {
+        res.send(require('./db/connect').sendGet(res, content));
+    };
+    require('./db/user').getFollowedCount(db, id, send);
+});
+
+app.get('/getFollowers', function (req, res) {
+    var id = req.query.id;
+    var send = function (content) {
+        res.send(require('./db/connect').sendGet(res, content));
+    };
+    require('./db/user').getFollowers(db, id, send);
+});
+
+app.get('/getFollowingCount', function (req, res) {
+    var id = req.query.id;
+    var send = function (content) {
+        res.send(require('./db/connect').sendGet(res, content));
+    };
+    require('./db/user').getFollowingCount(db, id, send);
+});
+
+app.get('/getFollowings', function (req, res) {
+    var id = req.query.id;
+    var send = function (content) {
+        res.send(require('./db/connect').sendGet(res, content));
+    };
+    require('./db/user').getFollowings(db, id, send);
+});
+
 apiRoutes.post('/followUser', function (req, res) {
-    var id = req.body.id;
-    res.send('something' + id);
+    var id1 = req.body.id1;
+    var id2 = req.body.id2;
+    var send = function (content) {
+        res.send(require('./db/connect').sendPost(res, content));
+    };
+    require('./db/user').follow(db, id1, id2, send);
+});
+
+apiRoutes.post('/unfollowUser', function (req, res) {
+    var id1 = req.body.id1;
+    var id2 = req.body.id2;
+    var send = function (content) {
+        res.send(require('./db/connect').sendPost(res, content));
+    };
+    require('./db/user').unfollow(db, id1, id2, send);
 });
 
 apiRoutes.post('/addMovie', function (req, res) {
