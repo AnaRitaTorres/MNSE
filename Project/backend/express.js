@@ -251,20 +251,23 @@ app.get('/testRegister', function (req, res) {
         if (!error && response.statusCode === 200) {
             var options = {
                 url: 'http://localhost:8420/auth/addMovie',
-                token: body.token,
-                id: 1
+                body: {
+                    token: body.content.token,
+                    id: 1
+                },
+                json: true
             };
-            request.post(options, function (error, response, body) {
-                if (!error && response.statusCode === 200) {
-                    res.send({success: true, content: body});
+            request.post(options, function (error2, response2, body2) {
+                if (!error2 && response2.statusCode === 200) {
+                    return res.send({success: true, content: body2});
                 }
                 else {
-                    res.send({success: false, content: 'err'});
+                    return res.send({success: false, content: response2});
                 }
             })
         }
         else{
-            res.send({success: false, content: 'err'});
+            return res.send({success: false, content: 'err'});
         }
     })
 });
