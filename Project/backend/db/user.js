@@ -74,7 +74,7 @@ function register(db, info, sendFunc) {
         if (err) {
             sendFunc(err);
         }
-        else sendFunc(results);
+        else sendFunc(true);
     })
 }
 

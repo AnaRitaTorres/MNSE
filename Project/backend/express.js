@@ -184,24 +184,56 @@ apiRoutes.post('/unfollowUser', function (req, res) {
     require('./db/user').unfollow(db, id1, id2, send);
 });
 
+app.get('/getFavouriteMovies', function (req, res) {
+    var id = req.query.id;
+    var send = function (content) {
+        require('./db/connect').sendGet(res, content);
+    };
+    require('./db/movie').getFavouriteMovies(db, id, send);
+});
+
+app.get('/getFavouriteCharacters', function (req, res) {
+    var id = req.query.id;
+    var send = function (content) {
+        require('./db/connect').sendGet(res, content);
+    };
+    require('./db/character').getFavouriteCharacters(db, id, send);
+});
+
 apiRoutes.post('/addMovie', function (req, res) {
-    var id = req.decoded.id;
-    res.send('something' + id);
+    var id1 = req.decoded.id;
+    var id2 = req.body.id;
+    var send = function (content) {
+        require('./db/connect').sendPost(res, content);
+    };
+    require('./db/movie').addFavourite(db, id1, id2, send);
 });
 
 apiRoutes.post('/addCharacter', function (req, res) {
-    var id = req.decoded.id;
-    res.send('something' + id);
+    var id1 = req.decoded.id;
+    var id2 = req.body.id;
+    var send = function (content) {
+        require('./db/connect').sendPost(res, content);
+    };
+    require('./db/character').addFavourite(db, id1, id2, send);
 });
 
 apiRoutes.post('/removeMovie', function (req, res) {
-    var id = req.decoded.id;
-    res.send('something' + id);
+    var id1 = req.decoded.id;
+    var id2 = req.body.id;
+    var send = function (content) {
+        require('./db/connect').sendPost(res, content);
+    };
+    require('./db/movie').deleteFavourite(db, id1, id2, send);
 });
 
 apiRoutes.post('/removeCharacter', function (req, res) {
-    var id = req.decoded.id;
-    res.send('something' + id);
+    var id1 = req.decoded.id;
+    var id2 = req.body.id;
+    var send = function (content) {
+        require('./db/connect').sendPost(res, content);
+    };
+    require('./db/character').deleteFavourite(db, id1, id2, send);
 });
 
 app.get('/testRegister', function (req, res) {
@@ -217,7 +249,19 @@ app.get('/testRegister', function (req, res) {
     };
     request.post(authOptions,function (error, response, body) {
         if (!error && response.statusCode === 200) {
-            res.send({success: true, content: body});
+            var options = {
+                url: 'http://localhost:8420/auth/addMovie',
+                token: body.token,
+                id: 1
+            };
+            request.post(options, function (error, response, body) {
+                if (!error && response.statusCode === 200) {
+                    res.send({success: true, content: body});
+                }
+                else {
+                    res.send({success: false, content: 'err'});
+                }
+            })
         }
         else{
             res.send({success: false, content: 'err'});
