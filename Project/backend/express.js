@@ -250,7 +250,7 @@ app.get('/testRegister', function (req, res) {
     request.post(authOptions,function (error, response, body) {
         if (!error && response.statusCode === 200) {
             var options = {
-                url: 'http://localhost:8420/auth/addMovie',
+                url: 'http://localhost:8420/auth/removeMovie',
                 body: {
                     token: body.content.token,
                     id: 1

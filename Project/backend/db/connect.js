@@ -13,6 +13,7 @@ module.exports = {
   },
   sendPost: function (res, content) {
     if (content === '' || content === [] || content === null || content === undefined) return res.send({success: false});
+    if (content['errno'] !== undefined && content['sqlMessage'].includes('Duplicate')) return res.send({success: false, err: 'Duplicate Entry!'});
     if (content['errno'] !== undefined && content['errno'] > 0) return res.send({success: 'query error on post!', err: content});
     return res.send({success: true, content: content})
   },
