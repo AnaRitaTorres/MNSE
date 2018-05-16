@@ -1,8 +1,8 @@
 <template>
   <div id="homeBackground">
     <b-img src="./static/images/disney logo.jpg" fluid alt="Responsive disney image" />
-    <div id="wheelOutside">
-      <b-img center id="wheel" src="./static/images/wheel.png" fluid alt="Responsive wheel image" />
+    <div id="wheel">
+      <b-img center id="wheelOutside" src="./static/images/wheel.png" fluid alt="Responsive wheel image" />
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
     left: 0;
     right: 0;
   }
-  #wheelOutside{
+  #wheel{
     /*position: absolute;*/
     left: 0;
     right: 0;
@@ -27,8 +27,10 @@ export default {
     top: 25%;
     margin: 0 auto;
     position: absolute;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 88%);
   }
-  #wheel{
+  #wheelOutside{
     animation-name: example;
     animation-duration: 2s;
     animation-iteration-count: infinite;
