@@ -14,12 +14,12 @@ export default new Router({
       component: Home
     },
     {
-      path: '/',
+      path: '/profile',
       name: 'Profile',
       component: Profile
     },
     {
-      path: '/',
+      path: '/decade',
       name: 'Decade',
       component: Decade
     }
