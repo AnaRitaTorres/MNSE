@@ -3,10 +3,12 @@
 <b-container class="profile_con">
     <b-row>
         <b-nav id="cover_pic">
+            <b-card id="location">
+                <h4>Username</h4>
+                <h5>City, Country</h5>
+            </b-card>
             <div>
                 <b-img src="https://lorempixel.com/1024/400/" fluid alt="Responsive image" />
-                <!--<b-nav-item>Username</b-nav-item>
-                <b-nav-item>City,Country</b-nav-item>-->
             </div>
         </b-nav>
     </b-row>
@@ -19,12 +21,12 @@
                 <div id="button">
                     <b-button id="follow" href="#" >+ Follow</b-button>
                 </div>
-                <h6 id="about">About</h6>
+                <h6 class="main_text">About</h6>
                 <p>
                     Some quick example text to build on the card title and make up the bulk of the card's content.
                 </p>
-                <h6 id="about">Followers 100 </h6>
-                <h6 id="about">Following 100 </h6>
+                <h6 class="main_text">Followers 100 </h6>
+                <h6 class="main_text">Following 100 </h6>
             </b-card>
         </b-col>
         <b-col id="disney_info" md="8">
@@ -86,8 +88,17 @@ export default {
 #cover_pic{
     opacity: 0.5;
 }
+#location{
+  top: -20%;
+  background-color: transparent;
+  border: none;
+  left: 3%;
+}
+#location h4, h5 {
+  font-weight: bold;
+}
 #personal_info{
-   top: -40%;
+   top: -20%;
    left: 5%;
    height: 70%;
    background-color:#F7E1D3;
@@ -105,7 +116,7 @@ export default {
     color: black;
     background-color: white;
 }
-#about{
+.main_text{
     padding-left: 6%;
     font-weight: bold;
 }
@@ -114,7 +125,6 @@ export default {
    padding-top: 10%;
    font-weight: bold;
 }
-
 #film_info, #character_info{
     top: 5%;
     bottom: 20%;
