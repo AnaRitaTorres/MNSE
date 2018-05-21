@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
-        <h3 class="decade-header">The 40s</h3>
+        <h3 class="decade-header">The 70s</h3>
       </div>
       <div class="col-md-1"></div>
     </div>

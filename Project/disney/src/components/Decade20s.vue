@@ -1,10 +1,10 @@
 <template>
-  <div class="">
+  <div class="decade">
     <br>
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
-        <h3 class="decade-header">The 40s</h3>
+        <h3 class="decade-header">The 20s</h3>
       </div>
       <div class="col-md-1"></div>
     </div>
@@ -15,25 +15,31 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">1923 - Disney is born</h5>
+                  <br>
                   <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
+                    Walt Disney founds a company called "Disney Brothers Cartoon Studio", which would later become the Disney company, while also releasing the <span class="italic">Alice's Wonderland</span> series.
+                  </p>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1928 - Mickey and Minnie Mouse's first appearance</h5>
+                  <br>
+                  <p>
+                    The first movies to feature Mickey Mouse are made, thus birthing this iconic character of the franchise. Mickey debuts in <span class="italic">Plane Crazy</span>, only being displayed to a test screening theater audience, and appears later in the year in <span class="italic">Steamboat Willy</span>, his first sound cartoon, along his girlfriend Minnie.
                   </p>
                   <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    The appearance of syncronized sound with character noises marked the enormous success the movie attained.
                   </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <br>
+                  <div class="timelineImg">
+                    <img src="../assets/Steamboat-willie.jpg" fluid alt="Mickey in Steamboat Willie"/>
+                    <p>Mickey Mouse in Steamboat Willie</p>
                   </div>
                 </b-media>
               </b-card>
@@ -43,57 +49,9 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">1929 - Silly Symphonies</h5>
                   <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
-                </b-media>
-              </b-card>
-            </div>
-          </li>
-          <li>
-            <div class="timelineElement">
-              <b-card class="timelineCard">
-                <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
-                  </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
-                  </div>
-                </b-media>
-              </b-card>
-            </div>
-          </li>
-          <li>
-            <div class="timelineElement">
-              <b-card class="timelineCard">
-                <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
+                    During this year the <span class="italic">Silly Sympohonies</span> series of animated cartoons begins, marking the start of a 75 cartoon saga.
                   </p>
                 </b-media>
               </b-card>
@@ -193,7 +151,7 @@ div .timeline_section{
   border-color: transparent #F7E1D3 transparent transparent;
 }
 .timeline ul li::after {
-  background: #fff;
+  background: #9AB7D3;
   transition: background .5s ease-in-out;
 }
 .timeline ul li.in-view::after {
@@ -212,9 +170,17 @@ div .timeline_section{
   visibility: visible;
   opacity: 1;
 }
-.timeline ul li .timelineCard{
+.timeline ul li .timelineCard, .timeline ul li .timelineCard *{
   background-color: transparent;
   border: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline ul li .timelineCard .italic{
+  font-style: italic;
+}
+.timeline ul li .timelineCard .timelineImg {
+  text-align: center;
 }
 @media screen and (max-width: 800px) {
   .timeline ul li .timelineElement {
