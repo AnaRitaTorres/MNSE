@@ -19,7 +19,7 @@ export default new Router({
       component: Profile
     },
     {
-      path: '/',
+      path: '/decade',
       name: 'Decade',
       component: Decade
     }
