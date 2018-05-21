@@ -1,5 +1,6 @@
 <template>
-<b-container class="profile">
+<div class="profile">
+<b-container class="profile_con">
     <b-row>
         <b-nav id="cover_pic">
             <div>
@@ -29,13 +30,42 @@
         <b-col id="disney_info" md="8">
            <h4>Favourite Films</h4>
            <b-card id="film_info">
+               <b-row>
+                   <b-col>
+                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                   </b-col>
+                   <b-col>
+                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                   </b-col>
+                   <b-col>
+                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                   </b-col>
+                   <b-col>
+                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                   </b-col>
+               </b-row>
            </b-card>
            <h4>Favourite Characters</h4>
            <b-card id="character_info">
+               <b-row>
+                   <b-col>
+                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                   </b-col>
+                   <b-col>
+                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                   </b-col>
+                   <b-col>
+                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                   </b-col>
+                   <b-col>
+                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                   </b-col>
+               </b-row>
            </b-card>
         </b-col>
     </b-row>
 </b-container>
+</div>
 </template>
 
 <script>
@@ -44,8 +74,14 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Tajawal');
+
 .profile{
-    padding: 5%;
+  background-color: #9AB7D3;
+  font-family: 'Tajawal', sans-serif;
+}
+.profile_con{
+    padding: 4%;
 }
 #cover_pic{
     opacity: 0.5;
@@ -53,8 +89,8 @@ export default {
 #personal_info{
    top: -40%;
    left: 5%;
-   height: 130%;
-   background-color:aquamarine;
+   height: 70%;
+   background-color:#F7E1D3;
 }
 #profile_pic{
     padding-bottom: 5%;
@@ -71,18 +107,20 @@ export default {
 }
 #about{
     padding-left: 6%;
+    font-weight: bold;
 }
 #disney_info h4{
    padding-left: 8%;
-   padding-top: 5%;
+   padding-top: 10%;
+   font-weight: bold;
 }
 
 #film_info, #character_info{
     top: 5%;
     bottom: 20%;
     left: 6%;
-    padding: 10%;
-    background-color:aquamarine;
+    padding: 5%;
+    background-color:#F7E1D3;
 }
 
 </style>
