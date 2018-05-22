@@ -2,42 +2,42 @@
   <div id="homeBackground">
     <b-img src="./static/images/disney logo.jpg" fluid alt="Responsive disney image" />
     <div id="wheel">
-      <b-img v-if="coiso" center id="wheelOutside" src="./static/images/wheel.png" fluid alt="Responsive wheel image" />
-      <div id="wheelInside">
+      <b-img center id="wheelOutside" c src="./static/images/wheel.png" fluid alt="Responsive wheel image" />
+      <div id="wheelInside" v-bind:style="[baseStyles, overrideStyles, rotatingAnim]">
         <div class="wheelC" >
-          <a href="#" id="wheel1">
+          <a href="#" id="wheel1" v-bind:class="wheel[1]" v-on:click="rotate(1)">
             <b-img id="char1" class="char" src="./static/images/char1.png" fluid alt="char1"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC1" >
-          <a href="#" id="wheel2">
+          <a href="#" id="wheel2" v-bind:class="wheel[2]" v-on:click="rotate(2)">
             <b-img id="char2" class="char" src="./static/images/char2.png" fluid alt="char2"/>
           </a>
-          <a href="#" id="wheel9">
+          <a href="#" id="wheel9" v-bind:class="wheel[9]" v-on:click="rotate(9)">
             <b-img id="char9" class="char" src="./static/images/char9.png" fluid alt="char9"/>
           </a>
         </div>
-        <div class="wheelC" id="wheelC2">
-          <a href="#" id="wheel3">
+        <div class="wheelC" id="wheelC2" >
+          <a href="#" id="wheel3" v-bind:class="wheel[3]" v-on:click="rotate(3)">
             <b-img id="char3" class="char" src="./static/images/char3.png" fluid alt="char3"/>
           </a>
-          <a href="#" id="wheel8">
+          <a href="#" id="wheel8" v-bind:class="wheel[8]" v-on:click="rotate(8)">
             <b-img id="char8" class="char" src="./static/images/char8.png" fluid alt="char8"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC3">
-          <a href="#" id="wheel4">
+          <a href="#" id="wheel4" v-bind:class="wheel[4]" v-on:click="rotate(4)">
             <b-img id="char4" class="char" src="./static/images/char4.png" fluid alt="char4"/>
           </a>
-          <a href="#" id="wheel7">
+          <a href="#" id="wheel7" v-bind:class="wheel[7]" v-on:click="rotate(7)">
             <b-img id="char7" class="char" src="./static/images/char7.png" fluid alt="char7"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC4">
-          <a href="#" id="wheel5">
+          <a href="#" id="wheel5" v-bind:class="wheel[5]" v-on:click="rotate(5)">
             <b-img id="char5" class="char" src="./static/images/char5.png" fluid alt="char5"/>
           </a>
-          <a href="#" id="wheel6">
+          <a href="#" id="wheel6" v-bind:class="wheel[6]" v-on:click="rotate(6)">
             <b-img id="char6" class="char" src="./static/images/char6.png" fluid alt="char6"/>
           </a>
         </div>
@@ -50,7 +50,61 @@
 export default {
   data () {
     return {
-      coiso: true
+      state: 1,
+      wheel: ['nope', 'active', 'right', 'none', 'none', 'none', 'none', 'none', 'none', 'left'],
+      animated: false,
+      coiso: true,
+      baseStyles: {
+        transform: 'rotate(' + 0 + 'deg)'
+      },
+      overrideStyles: {
+        transform: 'rotate(' + (this.state - 1) * 40 + 'deg)'
+      },
+      rotatingAnim: {
+        '-webkit-animation-name': 'rotation0',
+        '-webkit-animation-duration': '2s',
+        '-webkit-animation-iteration-count': '1',
+        '-webkit-animation-fill-mode': 'forwards',
+        'animation-name': 'rotation0',
+        'animation-duration': '2s',
+        'animation-iteration-count': '1',
+        'animation-fill-mode': 'forwards'
+      }
+    }
+  },
+  methods: {
+    rotate (value) {
+      if (this.animated) return
+      this.overrideStyles.color = 'red'
+      this.state = value
+      this.rotatingAnim = {
+        '-webkit-animation-name': 'rotationE' + this.state,
+        '-webkit-animation-duration': '2s',
+        '-webkit-animation-iteration-count': '1',
+        '-webkit-animation-fill-mode': 'forwards',
+        'animation-name': 'rotationE' + this.state,
+        'animation-duration': '2s',
+        'animation-iteration-count': '1',
+        'animation-fill-mode': 'forwards'
+      }
+      let self = this
+      self.animated = true
+      setTimeout(
+        function () {
+          self.overrideStyles.transform = 'rotate(' + 40 * (self.state - 1) + 'deg)'
+          self.animated = false
+          this.rotatingAnim = {
+            '-webkit-animation-name': 'rotation0',
+            'animation-name': 'rotation0'
+          }
+        }, 2000)
+    },
+    changeAngle () {
+      switch (this.state) {
+        case 1:
+          console.log('lmao')
+          break
+      }
     }
   }
 }
@@ -159,19 +213,173 @@ export default {
     right: -25%;
     transform: rotate(-40deg);
   }
-  #wheelOutside, #wheelInside{
-    /*animation-name: example;*/
-    /*animation-duration: 2s;*/
-    /*animation-iteration-count: infinite;*/
-  }
-  /* Safari 4.0 - 8.0 */
-  @-webkit-keyframes example {
+  @-webkit-keyframes rotation1 {
     0%   {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
+    100% {transform: rotate(320deg);}
   }
   /* Standard syntax */
-  @keyframes example {
+  @keyframes rotation1 {
     0%   {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
+    100% {transform: rotate(320deg);}
+  }
+  @-webkit-keyframes rotation2 {
+    0%   {transform: rotate(-40deg);}
+    100% {transform: rotate(280deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotation2 {
+    0%   {transform: rotate(-40deg);}
+    100% {transform: rotate(280deg);}
+  }
+  @-webkit-keyframes rotation3 {
+    0%   {transform: rotate(-80deg);}
+    100% {transform: rotate(240deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotation3 {
+    0%   {transform: rotate(-80deg);}
+    100% {transform: rotate(240deg);}
+  }
+  @-webkit-keyframes rotation4 {
+    0%   {transform: rotate(-120deg);}
+    100% {transform: rotate(200deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotation4 {
+    0%   {transform: rotate(-120deg);}
+    100% {transform: rotate(200deg);}
+  }
+  @-webkit-keyframes rotation5 {
+    0%   {transform: rotate(-160deg);}
+    100% {transform: rotate(160deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotation5 {
+    0%   {transform: rotate(-160deg);}
+    100% {transform: rotate(160deg);}
+  }
+  @-webkit-keyframes rotation6 {
+    0%   {transform: rotate(-200deg);}
+    100% {transform: rotate(120deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotation6 {
+    0%   {transform: rotate(-200deg);}
+    100% {transform: rotate(120deg);}
+  }
+  @-webkit-keyframes rotation7 {
+    0%   {transform: rotate(-240deg);}
+    100% {transform: rotate(80deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotation7 {
+    0%   {transform: rotate(-240deg);}
+    100% {transform: rotate(80deg);}
+  }
+  @-webkit-keyframes rotation8 {
+    0%   {transform: rotate(-280deg);}
+    100% {transform: rotate(40deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotation8 {
+    0%   {transform: rotate(-280deg);}
+    100% {transform: rotate(40deg);}
+  }
+  @-webkit-keyframes rotation9 {
+    0%   {transform: rotate(-320deg);}
+    100% {transform: rotate(0deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotation9 {
+    0%   {transform: rotate(-320deg);}
+    100% {transform: rotate(0deg);}
+  }
+  @-webkit-keyframes rotationE1 {
+    100%   {transform: rotate(40deg);}
+    0% {transform: rotate(360deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotationE1 {
+    100%   {transform: rotate(40deg);}
+    0% {transform: rotate(360deg);}
+  }
+  @-webkit-keyframes rotationE2 {
+    100%   {transform: rotate(0deg);}
+    0% {transform: rotate(320deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotationE2 {
+    100%   {transform: rotate(0deg);}
+    0% {transform: rotate(320deg);}
+  }
+  @-webkit-keyframes rotationE3 {
+    100%   {transform: rotate(-80deg);}
+    0% {transform: rotate(240deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotationE3 {
+    100%   {transform: rotate(-80deg);}
+    0% {transform: rotate(240deg);}
+  }
+  @-webkit-keyframes rotationE4 {
+    100%   {transform: rotate(-120deg);}
+    0% {transform: rotate(200deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotationE4 {
+    100%   {transform: rotate(-120deg);}
+    0% {transform: rotate(200deg);}
+  }
+  @-webkit-keyframes rotationE5 {
+    100%   {transform: rotate(-160deg);}
+    0% {transform: rotate(160deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotationE5 {
+    100%   {transform: rotate(-160deg);}
+    0% {transform: rotate(160deg);}
+  }
+  @-webkit-keyframes rotationE6 {
+    100%   {transform: rotate(-200deg);}
+    0% {transform: rotate(120deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotationE6 {
+    100%   {transform: rotate(-200deg);}
+    0% {transform: rotate(120deg);}
+  }
+  @-webkit-keyframes rotationE7 {
+    100%   {transform: rotate(-240deg);}
+    0% {transform: rotate(80deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotationE7 {
+    100%   {transform: rotate(-240deg);}
+    0% {transform: rotate(80deg);}
+  }
+  @-webkit-keyframes rotationE8 {
+    100%   {transform: rotate(-280deg);}
+    0% {transform: rotate(40deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotationE8 {
+    100%   {transform: rotate(-280deg);}
+    0% {transform: rotate(40deg);}
+  }
+  @-webkit-keyframes rotationE9 {
+    100%   {transform: rotate(-360deg);}
+    0% {transform: rotate(40deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotationE9 {
+    100%   {transform: rotate(-360deg);}
+    0% {transform: rotate(40deg);}
+  }
+  @-webkit-keyframes rotation0 {
+    0%   {transform: rotate(0deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotation0 {
+    0%   {transform: rotate(0deg);}
   }
 </style>
