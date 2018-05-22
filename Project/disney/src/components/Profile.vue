@@ -1,75 +1,82 @@
 <template>
 <div class="profile">
-<b-container class="profile_con">
-    <b-row>
-      <div id="cover">
-        <b-img id="cover_pic" src="https://lorempixel.com/1024/400/" fluid alt="Responsive image" />
-        <b-card id="location">
-            <h4>Username</h4>
-            <h5>City, Country</h5>
-        </b-card>
-      </div>
-   </b-row>
-    <b-row>
-        <b-col md="3">
-            <b-card id="personal_info">
-                <div id="profile_pic">
-                    <b-img src="/static/images/profile_pic.jpg" fluid alt="Responsive image" />
-                </div>
-                <div id="button">
-                    <b-button id="follow" href="#" >+ Follow</b-button>
-                </div>
-                <h6 class="main_text">About</h6>
-                <p>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                </p>
-                <h6 class="main_text">Followers 100 </h6>
-                <h6 class="main_text">Following 100 </h6>
+    <Header></Header>
+    <b-container class="profile_con">
+        <b-row>
+        <div id="cover">
+            <b-img id="cover_pic" src="https://lorempixel.com/1024/400/" fluid alt="Responsive image" />
+            <b-card id="location">
+                <h4>Username</h4>
+                <h5>City, Country</h5>
             </b-card>
-        </b-col>
-        <b-col id="disney_info" md="8">
-           <h4>Favourite Films</h4>
-           <b-card id="film_info">
-               <b-row>
-                   <b-col>
-                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                   </b-col>
-                   <b-col>
-                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                   </b-col>
-                   <b-col>
-                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                   </b-col>
-                   <b-col>
-                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                   </b-col>
-               </b-row>
-           </b-card>
-           <h4>Favourite Characters</h4>
-           <b-card id="character_info">
-               <b-row>
-                   <b-col>
-                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                   </b-col>
-                   <b-col>
-                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                   </b-col>
-                   <b-col>
-                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                   </b-col>
-                   <b-col>
-                        <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                   </b-col>
-               </b-row>
-           </b-card>
-        </b-col>
+        </div>
     </b-row>
-</b-container>
-</div>
+        <b-row>
+            <b-col md="3">
+                <b-card id="personal_info">
+                    <div id="profile_pic">
+                        <b-img src="/static/images/profile_pic.jpg" fluid alt="Responsive image" />
+                    </div>
+                    <div id="button">
+                        <b-button id="follow" href="#" >+ Follow</b-button>
+                    </div>
+                    <h6 class="main_text">About</h6>
+                    <p>
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <h6 class="main_text">Followers 100 </h6>
+                    <h6 class="main_text">Following 100 </h6>
+                </b-card>
+            </b-col>
+            <b-col id="disney_info" md="8">
+            <h4>Favourite Films</h4>
+            <b-card id="film_info">
+                <b-row>
+                    <b-col>
+                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                    </b-col>
+                    <b-col>
+                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                    </b-col>
+                    <b-col>
+                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                    </b-col>
+                    <b-col>
+                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                    </b-col>
+                </b-row>
+            </b-card>
+            <h4>Favourite Characters</h4>
+            <b-card id="character_info">
+                <b-row>
+                    <b-col>
+                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                    </b-col>
+                    <b-col>
+                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                    </b-col>
+                    <b-col>
+                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                    </b-col>
+                    <b-col>
+                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                    </b-col>
+                </b-row>
+            </b-card>
+            </b-col>
+        </b-row>
+    </b-container>
+    </div>
 </template>
 
 <script>
+import Header from '@/components/Header'
+
 export default {
+  name: 'profile',
+  components: {
+    Header
+  }
 }
 </script>
 
