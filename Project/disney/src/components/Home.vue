@@ -2,45 +2,49 @@
   <div id="homeBackground">
     <b-img src="./static/images/disney logo.jpg" fluid alt="Responsive disney image" />
     <div id="wheel">
-      <b-img center id="wheelOutside" c src="./static/images/wheel.png" fluid alt="Responsive wheel image" />
+      <b-img v-bind:style="[baseStyles, overrideStyles, rotatingAnim]" center id="wheelOutside" c src="./static/images/wheel.png" fluid alt="Responsive wheel image" />
       <div id="wheelInside" v-bind:style="[baseStyles, overrideStyles, rotatingAnim]">
         <div class="wheelC" >
-          <a href="#" id="wheel1" v-bind:class="wheel[1]" v-on:click="rotate(1)">
+          <a href="#" id="wheel1" v-bind:class="wheel[1]">
             <b-img id="char1" class="char" src="./static/images/char1.png" fluid alt="char1"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC1" >
-          <a href="#" id="wheel2" v-bind:class="wheel[2]" v-on:click="rotate(2)">
+          <a href="#" id="wheel2" v-bind:class="wheel[2]">
             <b-img id="char2" class="char" src="./static/images/char2.png" fluid alt="char2"/>
           </a>
-          <a href="#" id="wheel9" v-bind:class="wheel[9]" v-on:click="rotate(9)">
+          <a href="#" id="wheel9" v-bind:class="wheel[9]">
             <b-img id="char9" class="char" src="./static/images/char9.png" fluid alt="char9"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC2" >
-          <a href="#" id="wheel3" v-bind:class="wheel[3]" v-on:click="rotate(3)">
+          <a href="#" id="wheel3" v-bind:class="wheel[3]">
             <b-img id="char3" class="char" src="./static/images/char3.png" fluid alt="char3"/>
           </a>
-          <a href="#" id="wheel8" v-bind:class="wheel[8]" v-on:click="rotate(8)">
+          <a href="#" id="wheel8" v-bind:class="wheel[8]">
             <b-img id="char8" class="char" src="./static/images/char8.png" fluid alt="char8"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC3">
-          <a href="#" id="wheel4" v-bind:class="wheel[4]" v-on:click="rotate(4)">
+          <a href="#" id="wheel4" v-bind:class="wheel[4]">
             <b-img id="char4" class="char" src="./static/images/char4.png" fluid alt="char4"/>
           </a>
-          <a href="#" id="wheel7" v-bind:class="wheel[7]" v-on:click="rotate(7)">
+          <a href="#" id="wheel7" v-bind:class="wheel[7]">
             <b-img id="char7" class="char" src="./static/images/char7.png" fluid alt="char7"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC4">
-          <a href="#" id="wheel5" v-bind:class="wheel[5]" v-on:click="rotate(5)">
+          <a href="#" id="wheel5" v-bind:class="wheel[5]">
             <b-img id="char5" class="char" src="./static/images/char5.png" fluid alt="char5"/>
           </a>
-          <a href="#" id="wheel6" v-bind:class="wheel[6]" v-on:click="rotate(6)">
+          <a href="#" id="wheel6" v-bind:class="wheel[6]">
             <b-img id="char6" class="char" src="./static/images/char6.png" fluid alt="char6"/>
           </a>
         </div>
+      </div>
+      <div id="buttonDiv">
+        <b-img id="button_l" class="buttons" src="./static/images/arrow_l.png" fluid alt="arrow_l" v-on:click="rotate(-1)"/>
+        <b-img id="button_r" class="buttons" src="./static/images/arrow_r.png" fluid alt="arrow_r" v-on:click="rotate(1)"/>
       </div>
     </div>
   </div>
@@ -75,22 +79,26 @@ export default {
   methods: {
     rotate (value) {
       if (this.animated) return
-      this.overrideStyles.color = 'red'
-      this.state = value
+      let rA = (value === 1) ? 'rotation' + this.state : 'rotationE' + this.state
       this.rotatingAnim = {
-        '-webkit-animation-name': 'rotationE' + this.state,
+        '-webkit-animation-name': rA,
         '-webkit-animation-duration': '2s',
         '-webkit-animation-iteration-count': '1',
         '-webkit-animation-fill-mode': 'forwards',
-        'animation-name': 'rotationE' + this.state,
+        'animation-name': rA,
         'animation-duration': '2s',
         'animation-iteration-count': '1',
         'animation-fill-mode': 'forwards'
       }
+      this.wheel[this.state] = 'none'
       let self = this
       self.animated = true
       setTimeout(
         function () {
+          self.state += value
+          if (self.state === 10) self.state = 1
+          if (self.state === 0) self.state = 9
+          self.wheel[self.state] = 'active'
           self.overrideStyles.transform = 'rotate(' + 40 * (self.state - 1) + 'deg)'
           self.animated = false
           this.rotatingAnim = {
@@ -98,13 +106,6 @@ export default {
             'animation-name': 'rotation0'
           }
         }, 2000)
-    },
-    changeAngle () {
-      switch (this.state) {
-        case 1:
-          console.log('lmao')
-          break
-      }
     }
   }
 }
@@ -131,6 +132,28 @@ export default {
   .wheelC{
     text-align: center;
   }
+  #buttonDiv{
+    z-index: 8;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: -240%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .buttons{
+    width: 25%;
+    height: 25%;
+  }
+  #button_l{
+    float: left;
+  }
+  #button_r{
+    float:right;
+  }
+  .buttons:hover{
+    cursor: pointer;
+  }
   #wheelC1{
     margin-top: -2%;
   }
@@ -139,6 +162,9 @@ export default {
   }
   #wheelC3{
     margin-top: 10%;
+  }
+  #wheelOutside{
+    z-index: 9;
   }
   #wheelInside{
     left: 0;
