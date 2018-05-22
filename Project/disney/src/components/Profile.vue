@@ -2,16 +2,14 @@
 <div class="profile">
 <b-container class="profile_con">
     <b-row>
-        <b-nav id="cover_pic">
-            <b-card id="location">
-                <h4>Username</h4>
-                <h5>City, Country</h5>
-            </b-card>
-            <div>
-                <b-img src="https://lorempixel.com/1024/400/" fluid alt="Responsive image" />
-            </div>
-        </b-nav>
-    </b-row>
+      <div id="cover">
+        <b-img id="cover_pic" src="https://lorempixel.com/1024/400/" fluid alt="Responsive image" />
+        <b-card id="location">
+            <h4>Username</h4>
+            <h5>City, Country</h5>
+        </b-card>   
+      </div>
+   </b-row>
     <b-row>
         <b-col md="3">
             <b-card id="personal_info">
@@ -85,14 +83,18 @@ export default {
 .profile_con{
     padding: 4%;
 }
+#cover{
+    bottom: 0%;
+}
 #cover_pic{
     opacity: 0.5;
 }
 #location{
   top: -20%;
+  padding-bottom:0px;
   background-color: transparent;
   border: none;
-  left: 3%;
+  left: 30%;
 }
 #location h4, h5 {
   font-weight: bold;
@@ -132,5 +134,4 @@ export default {
     padding: 5%;
     background-color:#F7E1D3;
 }
-
 </style>
