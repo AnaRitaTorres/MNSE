@@ -7,7 +7,7 @@
         <b-card id="location">
             <h4>Username</h4>
             <h5>City, Country</h5>
-        </b-card>   
+        </b-card>
       </div>
    </b-row>
     <b-row>
