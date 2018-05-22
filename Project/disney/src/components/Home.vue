@@ -294,15 +294,6 @@ export default {
     0%   {transform: rotate(-320deg);}
     100% {transform: rotate(0deg);}
   }
-  @-webkit-keyframes rotationE1 {
-    100%   {transform: rotate(40deg);}
-    0% {transform: rotate(360deg);}
-  }
-  /* Standard syntax */
-  @keyframes rotationE1 {
-    100%   {transform: rotate(40deg);}
-    0% {transform: rotate(360deg);}
-  }
   @-webkit-keyframes rotationE2 {
     100%   {transform: rotate(0deg);}
     0% {transform: rotate(320deg);}
@@ -313,67 +304,76 @@ export default {
     0% {transform: rotate(320deg);}
   }
   @-webkit-keyframes rotationE3 {
-    100%   {transform: rotate(-80deg);}
-    0% {transform: rotate(240deg);}
+    100%   {transform: rotate(-40deg);}
+    0% {transform: rotate(280deg);}
   }
   /* Standard syntax */
   @keyframes rotationE3 {
+    100%   {transform: rotate(-40deg);}
+    0% {transform: rotate(280deg);}
+  }
+  @-webkit-keyframes rotationE4 {
     100%   {transform: rotate(-80deg);}
     0% {transform: rotate(240deg);}
   }
-  @-webkit-keyframes rotationE4 {
-    100%   {transform: rotate(-120deg);}
-    0% {transform: rotate(200deg);}
-  }
   /* Standard syntax */
   @keyframes rotationE4 {
-    100%   {transform: rotate(-120deg);}
-    0% {transform: rotate(200deg);}
+    100%   {transform: rotate(-80deg);}
+    0% {transform: rotate(240deg);}
   }
   @-webkit-keyframes rotationE5 {
-    100%   {transform: rotate(-160deg);}
-    0% {transform: rotate(160deg);}
+    100%   {transform: rotate(-120deg);}
+    0% {transform: rotate(200deg);}
   }
   /* Standard syntax */
   @keyframes rotationE5 {
+    100%   {transform: rotate(-120deg);}
+    0% {transform: rotate(200deg);}
+  }
+  @-webkit-keyframes rotationE6 {
     100%   {transform: rotate(-160deg);}
     0% {transform: rotate(160deg);}
   }
-  @-webkit-keyframes rotationE6 {
-    100%   {transform: rotate(-200deg);}
-    0% {transform: rotate(120deg);}
-  }
   /* Standard syntax */
   @keyframes rotationE6 {
-    100%   {transform: rotate(-200deg);}
-    0% {transform: rotate(120deg);}
+    100%   {transform: rotate(-160deg);}
+    0% {transform: rotate(160deg);}
   }
   @-webkit-keyframes rotationE7 {
-    100%   {transform: rotate(-240deg);}
-    0% {transform: rotate(80deg);}
+    100%   {transform: rotate(-200deg);}
+    0% {transform: rotate(120deg);}
   }
   /* Standard syntax */
   @keyframes rotationE7 {
+    100%   {transform: rotate(-200deg);}
+    0% {transform: rotate(120deg);}
+  }
+  @-webkit-keyframes rotationE8 {
     100%   {transform: rotate(-240deg);}
     0% {transform: rotate(80deg);}
   }
-  @-webkit-keyframes rotationE8 {
-    100%   {transform: rotate(-280deg);}
-    0% {transform: rotate(40deg);}
-  }
   /* Standard syntax */
   @keyframes rotationE8 {
-    100%   {transform: rotate(-280deg);}
-    0% {transform: rotate(40deg);}
+    100%   {transform: rotate(-240deg);}
+    0% {transform: rotate(80deg);}
   }
   @-webkit-keyframes rotationE9 {
-    100%   {transform: rotate(-360deg);}
+    100%   {transform: rotate(-280deg);}
     0% {transform: rotate(40deg);}
   }
   /* Standard syntax */
   @keyframes rotationE9 {
-    100%   {transform: rotate(-360deg);}
+    100%   {transform: rotate(-280deg);}
     0% {transform: rotate(40deg);}
+  }
+  @-webkit-keyframes rotationE1 {
+    100%   {transform: rotate(-320deg);}
+    0% {transform: rotate(0deg);}
+  }
+  /* Standard syntax */
+  @keyframes rotationE1 {
+    100%   {transform: rotate(-320deg);}
+    0% {transform: rotate(0deg);}
   }
   @-webkit-keyframes rotation0 {
     0%   {transform: rotate(0deg);}
