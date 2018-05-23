@@ -102,7 +102,7 @@ export default {
   background-color: transparent;
   border: none;
   left: 35%;
-  top: 50%;
+  top: 35%;
   position: absolute;
 }
 #location h4, h5 {
@@ -110,7 +110,7 @@ export default {
 }
 #personal_info{
    top: -20%;
-   left: 5%;
+   left: 7%;
    height: 70%;
    background-color:#F7E1D3;
 }
