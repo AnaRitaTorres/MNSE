@@ -33,34 +33,17 @@
             <h4>Favourite Films</h4>
             <b-card id="film_info">
                 <b-row>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
+                  <b-col v-for="item in movies">
+                    <b-img v-bind:src="'localhost:8082/static/movies/' + item.pic" fluid alt="Responsive image" />
+                  </b-col>
                 </b-row>
             </b-card>
             <h4>Favourite Characters</h4>
             <b-card id="character_info">
                 <b-row>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                  <!-- eslint-disable vue/valid-v-for -->
+                    <b-col v-for="item in characters">
+                            <b-img v-bind:src="'localhost:8082/static/characters/' + item.pic" fluid alt="Responsive image" />
                     </b-col>
                 </b-row>
             </b-card>
@@ -75,6 +58,8 @@ import Header from '@/components/Header'
 
 export default {
   name: 'profile',
+  characters: [],
+  movies: [],
   components: {
     Header
   }
