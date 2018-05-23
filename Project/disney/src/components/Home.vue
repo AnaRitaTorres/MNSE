@@ -1,4 +1,6 @@
 <template>
+<div>
+  <Header></Header>
   <div id="homeBackground">
     <b-img src="./static/images/disney logo.jpg" fluid alt="Responsive disney image" />
     <div id="wheel">
@@ -48,9 +50,11 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
+import Header from '@/components/Header'
 export default {
   data () {
     return {
@@ -107,13 +111,15 @@ export default {
           }
         }, 2000)
     }
+  },
+  components: {
+    Header
   }
 }
 </script>
 <style>
   #homeBackground{
     position: relative;
-    padding: 20px;
     left: 0;
     right: 0;
   }
