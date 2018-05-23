@@ -12,7 +12,7 @@
                     <b-nav-form>
                         <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
                     </b-nav-form>
-                </b-collapse>   
+                </b-collapse>
              </b-navbar-nav>
         </b-navbar>
     </div>
@@ -26,5 +26,6 @@ export default {
 <style>
 #header{
     background-color: white;
+    box-shadow: 0 2px 0px 0px rgba(0, 0, 0, 0.2);
 }
 </style>

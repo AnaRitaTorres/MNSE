@@ -2,7 +2,6 @@
 <div class="profile">
     <Header></Header>
     <b-container class="profile_con">
-        <b-row>
         <div id="cover">
             <b-img id="cover_pic" src="https://lorempixel.com/1024/400/" fluid alt="Responsive image" />
             <b-card id="location">
@@ -10,7 +9,6 @@
                 <h5>City, Country</h5>
             </b-card>
         </div>
-    </b-row>
         <b-row>
             <b-col md="3">
                 <b-card id="personal_info">
@@ -88,20 +86,21 @@ export default {
   font-family: 'Tajawal', sans-serif;
 }
 .profile_con{
-    padding: 4%;
+    padding-top: 5%;
 }
 #cover{
-    bottom: 0%;
+  bottom: 0%;
 }
 #cover_pic{
-    opacity: 0.5;
+  opacity: 0.5;
 }
 #location{
-  top: -20%;
   padding-bottom:0px;
   background-color: transparent;
   border: none;
-  left: 30%;
+  left: 35%;
+  top: 50%;
+  position: absolute; 
 }
 #location h4, h5 {
   font-weight: bold;
@@ -135,10 +134,13 @@ export default {
    font-weight: bold;
 }
 #film_info, #character_info{
-    top: 5%;
+    top: 4%;
     bottom: 20%;
     left: 6%;
     padding: 5%;
     background-color:#F7E1D3;
+}
+#character_info{
+    margin-bottom:10%;
 }
 </style>
