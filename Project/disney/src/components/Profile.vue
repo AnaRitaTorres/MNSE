@@ -6,7 +6,10 @@
             <b-img id="cover_pic" src="https://lorempixel.com/1024/400/" fluid alt="Responsive image" />
             <b-card id="location">
                 <h4>Username</h4>
-                <h5>City, Country</h5>
+                <h5>
+                    <i class="fa fa-location-arrow"></i>
+                    City, Country
+                </h5>
             </b-card>
         </div>
         <b-row>
@@ -100,7 +103,7 @@ export default {
   border: none;
   left: 35%;
   top: 50%;
-  position: absolute; 
+  position: absolute;
 }
 #location h4, h5 {
   font-weight: bold;
