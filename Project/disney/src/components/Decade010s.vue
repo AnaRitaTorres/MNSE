@@ -15,7 +15,44 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">2010 - Tangled</h5>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
+                    in faucibus.
+                  </p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://youtube.com/embed/wIzx0MQ4J58" allowfullscreen></b-embed>
+                  </div>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">2012 - Brave</h5>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
+                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin.
+                  </p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://youtube.com/embed/a0rQ6FSALmY" allowfullscreen></b-embed>
+                  </div>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">2013 - Frozen</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -28,12 +65,8 @@
                     Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
                     in faucibus.
                   </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://youtube.com/embed/BS0T8Cd4UhA" allowfullscreen></b-embed>
                   </div>
                 </b-media>
               </b-card>
@@ -43,7 +76,26 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">2014 - Big Hero 6</h5>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
+                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin.
+                  </p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://youtube.com/embed/uEeBXUUOBiI" allowfullscreen></b-embed>
+                  </div>
+               </b-media>
+              </b-card>
+            </div>
+          </li>
+           <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">2015 - Inside Out</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -59,25 +111,16 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">2016 - Zootopia</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                     Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
                     in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
+                    sollicitudin.
                   </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://youtube.com/embed/1-GCO1yGuic" allowfullscreen></b-embed>
                   </div>
                 </b-media>
               </b-card>
@@ -87,7 +130,23 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">2017 - Spider-Man: Homecoming</h5>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
+                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin.
+                  </p>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+           <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">2018 - Black Panther</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -220,5 +279,8 @@ div .timeline_section{
   .timeline ul li .timelineElement {
     width: 500px;
   }
+}
+.timelineCard .video{
+  margin: 4% !important;
 }
 </style>

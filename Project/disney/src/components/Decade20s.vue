@@ -57,6 +57,9 @@
                   <p>
                     During this year the <span class="italic">Silly Sympohonies</span> series of animated cartoons begins, marking the start of a 75 cartoon saga.
                   </p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://youtube.com/embed/dihJ1w48Jh0" allowfullscreen></b-embed>
+                  </div>
                 </b-media>
               </b-card>
             </div>
@@ -80,7 +83,7 @@
 import Header from '@/components/Header'
 export default {
   mounted () {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
     function isElementInViewport (el) {
       var rect = el.getBoundingClientRect()
       return (
@@ -106,7 +109,7 @@ export default {
       window.addEventListener('scroll', callbackFunc)
     })
   },
-  name:'Decade20s',
+  name: 'Decade20s',
   components: {
     Header
   }
@@ -176,7 +179,7 @@ div .timeline_section{
   border-color: transparent #F7E1D3 transparent transparent;
 }
 .timeline ul li::after {
-  background: #9AB7D3;
+  background: #406b94;
   transition: background .5s ease-in-out;
 }
 .timeline ul li.in-view::after {
@@ -222,5 +225,8 @@ div .timeline_section{
   .timeline ul li .timelineElement {
     width: 500px;
   }
+}
+.timelineCard .video{
+  margin: 4% !important;
 }
 </style>

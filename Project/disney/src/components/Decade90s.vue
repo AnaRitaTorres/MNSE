@@ -15,7 +15,7 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">1991 - Beauty and the Beast</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -43,7 +43,7 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">1992 - Aladdin</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -59,7 +59,7 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">1993 - The Nightmare Before Christmas</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -87,7 +87,71 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">1994 - The Lion King</h5>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
+                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin.
+                  </p>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+           <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1995 - Pocahontas & Toy Story</h5>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
+                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin.
+                  </p>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+           <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1996 - The Hunchback of Notre Dame</h5>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
+                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin.
+                  </p>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+           <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1997 - Hércules</h5>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
+                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin.
+                  </p>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+           <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1998 - Mulan & Bug's Life</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -220,5 +284,8 @@ div .timeline_section{
   .timeline ul li .timelineElement {
     width: 500px;
   }
+}
+.timelineCard .video{
+  margin: 4% !important;
 }
 </style>
