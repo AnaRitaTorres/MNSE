@@ -6,10 +6,13 @@
             </b-navbar-brand>
             <b-navbar-nav class="ml-auto">
                 <b-collapse is-nav id="nav_collapse">
-                    <a id="login" v-if="!isLogged" @click="showModal">
+                    <a class="log" v-if="!isLogged" @click="showModal">
                         Login/Register
                     </a>
-                    <a v-if="isLogged" v-on:click="logout">
+                    <a class="log" v-if="isLogged" v-on:click="profile">
+                      {{username}}
+                    </a>
+                    <a class="log" v-if="isLogged" v-on:click="logout">
                         Logout
                     </a>
                     <b-modal ref="myModalRef" hide-footer title="Log In\Register">
@@ -34,7 +37,7 @@
                             </b-button>
                             <br>
                             <br>
-                            <a v-on:click="logTab = false">
+                            <a class="question" v-on:click="logTab = false">
                                 Did you register yet? If not then please do!
                             </a>
                         </div>
@@ -78,13 +81,13 @@
                             </b-button>
                             <br>
                             <br>
-                            <a v-on:click="logTab = true">
+                            <a class="question" v-on:click="logTab = true">
                                 Already Registered? Please log in!
                             </a>
                         </div>
                     </b-modal>
-                    <b-nav-form>
-                        <b-form-input id="search" size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
+                    <b-nav-form id="search">
+                        <b-form-input  size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
                     </b-nav-form>
                 </b-collapse>
              </b-navbar-nav>
@@ -125,6 +128,9 @@ export default {
       require('../scripts/cookies').cleanCookie('name')
       require('../scripts/cookies').cleanCookie('id')
       window.location.replace(('/'))
+    },
+    profile () {
+      window.location.replace(('/#/profile'))
     },
     register () {
       if (!this.stateR) return false
@@ -196,31 +202,43 @@ export default {
       dbURL: 'http://localhost:8420/',
       name: '',
       description: '',
-      location: ''
+      location: '',
+      username: ''
     }
   },
   created () {
     this.isLogged = (require('../scripts/cookies').getCookie('id') !== undefined)
+    this.username = require('../scripts/cookies').getCookie('name')
   }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Tajawal');
+
 #header{
+    font-family: 'Tajawal', sans-serif;
     background-color: white;
     box-shadow: 0 2px 0px 0px rgba(0, 0, 0, 0.2);
 }
 #search{
-  margin-right: 10% !important;
-  width: 100%;
+  padding-right: 25%;
 }
-#login{
+#search .mr-sm-2{
+  padding-right: 10%;
+}
+.log{
   color:grey;
   margin-right: 10%;
   font-weight: bold;
 }
-#login:active{
+.log:active{
   text-decoration: underline;
 }
-
+.question{
+  border-style: solid;
+  border-color: green;
+  border-radius: 12px;
+  padding: 1%;
+}
 </style>
