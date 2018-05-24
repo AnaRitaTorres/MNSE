@@ -6,8 +6,11 @@
             </b-navbar-brand>
             <b-navbar-nav class="ml-auto">
                 <b-collapse is-nav id="nav_collapse">
-                    <b-button @click="showModal">
-                        Open Modal
+                    <b-button v-if="!isLogged" @click="showModal">
+                        Coiso e tale
+                    </b-button>
+                    <b-button v-if="isLogged" v-on:click="logout">
+                        Logout
                     </b-button>
                     <b-modal ref="myModalRef" hide-footer title="Log In or Register">
                         <div class="d-block text-center">
@@ -18,7 +21,7 @@
                                 label-for="input1"
                                 :state="state"
                             >
-                                <b-form-input id="input1" :state="state" v-model.trim="username"></b-form-input>
+                                <b-form-input id="input1" :state="state" v-model.trim="email"></b-form-input>
                             </b-form-group>
                             <b-form-group
                               id="fieldset2"
@@ -28,8 +31,11 @@
                               :valid-feedback="validFeedback"
                               :state="state"
                             >
-                              <b-form-input id="input2" :state="state" v-model.trim="password"></b-form-input>
+                              <b-form-input type='password' id="input2" :state="state" v-model.trim="password"></b-form-input>
                             </b-form-group>
+                            <b-button v-on:click="login">
+                              Log In
+                            </b-button>
                         </div>
                         <br> <!-- ñ havia uma class/tag que punha um tracinho? -->
                         <div class="d-block text-center">
@@ -50,28 +56,64 @@ export default {
   methods: {
     showModal () {
       this.$refs.myModalRef.show()
+    },
+    login () {
+      if (!this.state) return false
+      let sendObj = {
+        email: this.email,
+        password: this.password
+      }
+      let page = this
+      this.$http.post(this.dbURL + 'login', sendObj).then(
+        function (res) {
+          if (!res.body.success) {
+            page.errorMsg = res.body.content
+            console.log(res.body.content)
+            return
+          }
+          page.errorMsg = ''
+          require('../scripts/cookies').setCookie('token', res.body.content.token)
+          require('../scripts/cookies').setCookie('name', res.body.content.name)
+          require('../scripts/cookies').setCookie('id', res.body.content.id)
+          window.location.replace(('#/profile'))
+        }
+      )
+    },
+    logout () {
+      require('../scripts/cookies').cleanCookie('token')
+      require('../scripts/cookies').cleanCookie('name')
+      require('../scripts/cookies').cleanCookie('id')
+      window.location.replace(('/'))
     }
   },
   computed: {
     state () {
-      return this.password.length >= 1 && this.username.length >= 1
+      return this.password.length >= 1 && this.email.length >= 1
     },
     invalidFeedback () {
-      if (this.password.length > 1 && this.username.length >= 1) {
+      if (this.password.length >= 1 && this.email.length >= 1 && this.errorMsg === '') {
         return ''
+      } else if (this.password.length < 1 || this.email.length < 1) {
+        return 'Password or email field empty!'
       } else {
-        return 'Password or username field empty!'
+        return this.errorMsg
       }
     },
     validFeedback () {
-      return this.state === true ? 'Thank you' : ''
+      return (this.state === true && this.errorMsg === '') ? 'Thank you' : this.errorMsg
     }
   },
   data () {
     return {
-      username: '',
-      password: ''
+      email: '',
+      isLogged: false,
+      password: '',
+      errorMsg: '',
+      dbURL: 'http://localhost:8420/'
     }
+  },
+  created () {
+    this.isLogged = (require('../scripts/cookies').getCookie('id') !== undefined)
   }
 }
 </script>

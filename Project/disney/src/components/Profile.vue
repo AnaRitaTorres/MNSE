@@ -87,7 +87,7 @@ export default {
     let page = this
     let id = this.$route.query.id
     if (id === null || id === undefined) {
-      id = require('../scripts/cookies').getCookie('userId')
+      id = require('../scripts/cookies').getCookie('id')
     }
     this.id = id
     if (id !== null && id !== undefined) {
