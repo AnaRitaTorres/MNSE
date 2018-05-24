@@ -221,4 +221,7 @@ div .timeline_section{
     width: 500px;
   }
 }
+.timelineCard .video{
+  margin: 4% !important;
+}
 </style>
