@@ -6,40 +6,37 @@
             </b-navbar-brand>
             <b-navbar-nav class="ml-auto">
                 <b-collapse is-nav id="nav_collapse">
-                    <b-button v-if="!isLogged" @click="showModal">
-                        Coiso e tale
-                    </b-button>
-                    <b-button v-if="isLogged" v-on:click="logout">
+                    <a id="login" v-if="!isLogged" @click="showModal">
+                        Login/Register
+                    </a>
+                    <a v-if="isLogged" v-on:click="logout">
                         Logout
-                    </b-button>
-                    <b-modal ref="myModalRef" hide-footer title="Log In or Register">
+                    </a>
+                    <b-modal ref="myModalRef" hide-footer title="Log In\Register">
                         <div class="d-block text-center" v-if="logTab">
                             <h3>Log In</h3>
                             <b-form-group
                                 id="fieldset1"
-                                label="Enter your email"
-                                label-for="input1"
                                 :state="state"
                             >
-                                <b-form-input id="input1" :state="state" v-model.trim="email"></b-form-input>
+                                <b-form-input id="input1" placeholder="Enter your email" :state="state" v-model.trim="email"></b-form-input>
                             </b-form-group>
                             <b-form-group
                               id="fieldset2"
-                              label="Enter your password"
-                              label-for="input2"
                               :invalid-feedback="invalidFeedback"
                               :valid-feedback="validFeedback"
                               :state="state"
                             >
-                              <b-form-input type='password' id="input2" :state="state" v-model.trim="password"></b-form-input>
+                              <b-form-input type='password' id="input2" placeholder="Enter your password" :state="state" v-model.trim="password"></b-form-input>
                             </b-form-group>
-                            <b-button v-on:click="login">
+                            <b-button variant="success" v-on:click="login">
                               Log In
                             </b-button>
-                            <br> <!-- não havia uma tag que punha um tracinho ? -->
-                            <b-button v-on:click="logTab = false">
+                            <br>
+                            <br>
+                            <a v-on:click="logTab = false">
                                 Did you register yet? If not then please do!
-                            </b-button>
+                            </a>
                         </div>
                         <br> <!-- ñ havia uma class/tag que punha um tracinho? -->
                         <div class="d-block text-center" v-if="!logTab">
@@ -76,17 +73,18 @@
                             >
                               <b-form-input id="input7" placeholder="Where are you from? (optional) " :state="stateR" v-model.trim="location"></b-form-input>
                             </b-form-group>
-                            <b-button v-on:click="register">
+                            <b-button variant="success" v-on:click="register">
                                 Register
                             </b-button>
-                            <br> <!-- não havia uma tag que punha um tracinho ? -->
-                            <b-button v-on:click="logTab = true">
+                            <br>
+                            <br>
+                            <a v-on:click="logTab = true">
                                 Already Registered? Please log in!
-                            </b-button>
+                            </a>
                         </div>
                     </b-modal>
                     <b-nav-form>
-                        <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
+                        <b-form-input id="search" size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
                     </b-nav-form>
                 </b-collapse>
              </b-navbar-nav>
@@ -160,7 +158,7 @@ export default {
       if (this.password.length >= 1 && this.email.length >= 1 && this.errorMsg === '') {
         return ''
       } else if (this.password.length < 1 || this.email.length < 1) {
-        return 'Password or email field empty!'
+        return 'Password Or Email Field Empty!'
       } else {
         return this.errorMsg
       }
@@ -175,13 +173,13 @@ export default {
       if (this.password.length >= 4 && this.email.length >= 1 && this.name >= 1 && this.errorMsg === '') {
         return ''
       } else if (!this.email.includes('@')) {
-        return 'Please write a valid email!'
+        return 'Please Write A Valid Email!'
       } else if (this.password.length < 4) {
-        return 'Password must have at least 4 chars!'
+        return 'Password Must Have At Least 4 Chars!'
       } else if (this.errorMsg !== '') {
         return this.errorMsg
       } else {
-        return 'Some required fields are empty!'
+        return 'Some Required Fields Are Empty!'
       }
     },
     validFeedbackR () {
@@ -212,4 +210,17 @@ export default {
     background-color: white;
     box-shadow: 0 2px 0px 0px rgba(0, 0, 0, 0.2);
 }
+#search{
+  margin-right: 10% !important;
+  width: 100%;
+}
+#login{
+  color:grey;
+  margin-right: 10%;
+  font-weight: bold;
+}
+#login:active{
+  text-decoration: underline;
+}
+
 </style>
