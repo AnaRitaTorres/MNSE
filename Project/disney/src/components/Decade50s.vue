@@ -15,7 +15,7 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">1950 - Cinderella</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -28,12 +28,8 @@
                     Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
                     in faucibus.
                   </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://youtube.com/embed/urGE_tcx9JA" allowfullscreen></b-embed>
                   </div>
                 </b-media>
               </b-card>
@@ -43,7 +39,7 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">1955 - The Lady and The Tramp</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -51,6 +47,9 @@
                     in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin.
                   </p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://youtube.com/embed/fbzEOQLOAWw" allowfullscreen></b-embed>
+                  </div>
                 </b-media>
               </b-card>
             </div>
@@ -59,7 +58,7 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">1959 - Sleeping Beauty</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -72,12 +71,8 @@
                     Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
                     in faucibus.
                   </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://youtube.com/embed/TXbHShUnwxY" allowfullscreen></b-embed>
                   </div>
                 </b-media>
               </b-card>
@@ -220,5 +215,8 @@ div .timeline_section{
   .timeline ul li .timelineElement {
     width: 500px;
   }
+}
+.timelineCard .video{
+  margin: 4% !important;
 }
 </style>
