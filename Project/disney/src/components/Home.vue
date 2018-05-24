@@ -44,10 +44,10 @@
           </a>
         </div>
       </div>
-      <div id="buttonDiv">
-        <b-img id="button_l" class="buttons" src="./static/images/arrow_l.png" fluid alt="arrow_l" v-on:click="rotate(-1)"/>
-        <b-img id="button_r" class="buttons" src="./static/images/arrow_r.png" fluid alt="arrow_r" v-on:click="rotate(1)"/>
-      </div>
+    </div>
+    <div id="buttonDiv">
+      <b-img id="button_l" class="buttons" src="./static/images/arrow_l.png" fluid alt="arrow_l" v-on:click="rotate(-1)"/>
+      <b-img id="button_r" class="buttons" src="./static/images/arrow_r.png" fluid alt="arrow_r" v-on:click="rotate(1)"/>
     </div>
   </div>
 </div>
@@ -142,22 +142,24 @@ export default {
     text-align: center;
   }
   #buttonDiv{
-    z-index: 8;
+    z-index: 10;
     text-align: center;
     left: 0;
     right: 0;
-    top: -240%;
+    top: 70%;
     margin: 0 auto;
-    position: relative;
+    position: absolute;
   }
   .buttons{
-    width: 25%;
-    height: 25%;
+    width: 15%;
+    height: 15%;
   }
   #button_l{
+    margin-left: 20%;
     float: left;
   }
   #button_r{
+    margin-right: 20%;
     float:right;
   }
   .buttons:hover{
