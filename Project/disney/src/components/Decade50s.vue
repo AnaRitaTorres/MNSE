@@ -1,10 +1,14 @@
 <template>
-  <div class="">
+<div class="decade">
+    <Header></Header>
+    <br>
+    <br>
+    <br>
     <br>
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
-        <h3 class="decade-header">The 50s</h3>
+        <h3 class="decade-header">The 20s</h3>
       </div>
       <div class="col-md-1"></div>
     </div>
@@ -101,20 +105,22 @@
 </template>
 
 <script>
+import Header from '@/components/Header'
 export default {
   mounted () {
+    window.scrollTo(0, 0)
     function isElementInViewport (el) {
       var rect = el.getBoundingClientRect()
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom - 300 <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
       )
     }
     var items = document.querySelectorAll('.timeline li')
     function callbackFunc () {
-      for (var i = 0; i < items.length; i++) items[i].classList.remove('in-view')
+      for (var i = 0; i < items.length; i++) items[i].classList.add('in-view')
       for (i = 0; i < items.length; i++) {
         if (isElementInViewport(items[i])) {
           items[i].classList.add('in-view')
@@ -127,21 +133,30 @@ export default {
       window.addEventListener('load', callbackFunc)
       window.addEventListener('scroll', callbackFunc)
     })
+  },
+  name: 'Decade20s',
+  components: {
+    Header
   }
 }
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Tajawal');
+.decade {
+  overflow-x : hidden;
+  background-color:  #9AB7D3;
+  font: normal 16px/1.5 'Tajawal', sans-serif;
+}
 div .timeline_section{
-  font: normal 16px/1.5 sans-serif;
   background: #9AB7D3;
   color: #333;
   overflow-x: hidden;
-  padding-bottom: 50px;
 }
 .decade-header{
   text-align: center;
-  color: #0099FF;
+  color: #406b94;
+  font-weight: bolder;
 }
 .timeline ul li{
   list-style-type:none;
@@ -149,14 +164,15 @@ div .timeline_section{
   width: 8px;
   margin: 0 auto;
   padding-top: 50px;
-  background: #333333;
+  background: #406b94;
   text-align: justify;
+  border-radius: 10px;
 }
 .timeline ul li::after{
   content: '';
   position: absolute;
-  left: 50%;
-  bottom: 0;
+  left: 40%;
+  bottom: -5px;
   transform: translateX(-50%);
   width: 35px;
   height: 35px;
@@ -188,11 +204,11 @@ div .timeline_section{
   border-color: transparent #F7E1D3 transparent transparent;
 }
 .timeline ul li::after {
-  background: #fff;
+  background: #406b94;
   transition: background .5s ease-in-out;
 }
 .timeline ul li.in-view::after {
-  background: #333333;
+  background: #406b94;
 }
 .timeline ul li .timelineElement {
   visibility: hidden;
@@ -207,9 +223,28 @@ div .timeline_section{
   visibility: visible;
   opacity: 1;
 }
-.timeline ul li .timelineCard{
+.timeline ul li .timelineCard, .timeline ul li .timelineCard *{
   background-color: transparent;
   border: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline ul li .timelineCard .italic{
+  font-style: italic;
+}
+.timeline ul li .timelineCard .timelineImg {
+  text-align: center;
+}
+.decade .decadeRouter a{
+  color: #333333;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+.decade .decadeRouter a i{
+  font-size: 0.85em;
+}
+.decade .decadeRouter {
+  text-align: center;
 }
 @media screen and (max-width: 800px) {
   .timeline ul li .timelineElement {
