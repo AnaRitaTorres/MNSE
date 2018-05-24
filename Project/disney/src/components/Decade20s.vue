@@ -108,7 +108,7 @@ export default {
       window.addEventListener('scroll', callbackFunc)
     })
   },
-  name:'Decade20s',
+  name: 'Decade20s',
   components: {
     Header
   }
