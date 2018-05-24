@@ -1,5 +1,9 @@
 <template>
-  <div class="">
+  <div class="decade">
+    <Header></Header>
+    <br>
+    <br>
+    <br>
     <br>
     <div class="row">
       <div class="col-md-1"></div>
@@ -15,86 +19,40 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
+                  <h5 class="mt-0">1930 - Distribution</h5>
                   <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
+                    Distribution is moved to Columbia Pictures.  
                   </p>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1932 - Distribution</h5>
                   <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Distribution moves again, this time to United Artists.  
                   </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1932 - First Academy Award</h5>
+                  <br>
+                  <p>
+                    Disney releases <span class="italic">Flowers and Trees</span>, a <span class="italic">Silly Symphonies</span> cartoon, in full-color (Technicolor). It is the first commercially released film to use this technique, reaching critical acclaim because of this as well. By fitting the category with success being only eight minutes long, the movie wins Disney the Academy Award for Animated Short Subjects.  
+                  </p>
+                  <br>
+                  <div class="timelineImg">
+                    <img src="../assets/Silly_symphony.jpg" fluid alt="Flowers and Trees' cover"/>
+                    <p>Flowers and Trees' cover</p>
                   </div>
-                </b-media>
-              </b-card>
-            </div>
-          </li>
-          <li>
-            <div class="timelineElement">
-              <b-card class="timelineCard">
-                <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
-                </b-media>
-              </b-card>
-            </div>
-          </li>
-          <li>
-            <div class="timelineElement">
-              <b-card class="timelineCard">
-                <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
-                  </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
-                  </div>
-                </b-media>
-              </b-card>
-            </div>
-          </li>
-          <li>
-            <div class="timelineElement">
-              <b-card class="timelineCard">
-                <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
                 </b-media>
               </b-card>
             </div>
@@ -102,12 +60,23 @@
         </ul>
       </section>
     </div>
+    <hr>
+    <div class="decadeRouter row">
+      <div class="col-md-5"></div>
+      <div class="col-md-2">
+        <a href="#/decade/30s">The 30s
+        <i class="fas fa-caret-right"></i></a>
+      </div>
+      <div class="col-md-5"></div>
+    </div>
   </div>
 </template>
 
 <script>
+import Header from '@/components/Header'
 export default {
   mounted () {
+    window.scrollTo(0,0)
     function isElementInViewport (el) {
       var rect = el.getBoundingClientRect()
       return (
@@ -119,7 +88,7 @@ export default {
     }
     var items = document.querySelectorAll('.timeline li')
     function callbackFunc () {
-      for (var i = 0; i < items.length; i++) items[i].classList.remove('in-view')
+      for (var i = 0; i < items.length; i++) items[i].classList.add('in-view')
       for (i = 0; i < items.length; i++) {
         if (isElementInViewport(items[i])) {
           items[i].classList.add('in-view')
@@ -132,21 +101,30 @@ export default {
       window.addEventListener('load', callbackFunc)
       window.addEventListener('scroll', callbackFunc)
     })
+  },
+  name:'Decade30s',
+  components: {
+    Header
   }
 }
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Tajawal');
+.decade {
+  overflow-x : hidden;
+  background-color:  #9AB7D3;
+  font: normal 16px/1.5 'Tajawal', sans-serif;
+}
 div .timeline_section{
-  font: normal 16px/1.5 sans-serif;
   background: #9AB7D3;
   color: #333;
   overflow-x: hidden;
-  padding-bottom: 50px;
 }
 .decade-header{
   text-align: center;
-  color: #0099FF;
+  color: #406b94;
+  font-weight: bolder;
 }
 .timeline ul li{
   list-style-type:none;
@@ -154,14 +132,15 @@ div .timeline_section{
   width: 8px;
   margin: 0 auto;
   padding-top: 50px;
-  background: #333333;
+  background: #406b94;
   text-align: justify;
+  border-radius: 10px;
 }
 .timeline ul li::after{
   content: '';
   position: absolute;
-  left: 50%;
-  bottom: 0;
+  left: 40%;
+  bottom: -5px;
   transform: translateX(-50%);
   width: 35px;
   height: 35px;
@@ -193,11 +172,11 @@ div .timeline_section{
   border-color: transparent #F7E1D3 transparent transparent;
 }
 .timeline ul li::after {
-  background: #fff;
+  background: #9AB7D3;
   transition: background .5s ease-in-out;
 }
 .timeline ul li.in-view::after {
-  background: #333333;
+  background: #406b94;
 }
 .timeline ul li .timelineElement {
   visibility: hidden;
@@ -212,9 +191,28 @@ div .timeline_section{
   visibility: visible;
   opacity: 1;
 }
-.timeline ul li .timelineCard{
+.timeline ul li .timelineCard, .timeline ul li .timelineCard *{
   background-color: transparent;
   border: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline ul li .timelineCard .italic{
+  font-style: italic;
+}
+.timeline ul li .timelineCard .timelineImg {
+  text-align: center;
+}
+.decade .decadeRouter a{
+  color: #333333;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+.decade .decadeRouter a i{
+  font-size: 0.85em;
+}
+.decade .decadeRouter {
+  text-align: center;
 }
 @media screen and (max-width: 800px) {
   .timeline ul li .timelineElement {

@@ -80,6 +80,7 @@
 import Header from '@/components/Header'
 export default {
   mounted () {
+    window.scrollTo(0,0)
     function isElementInViewport (el) {
       var rect = el.getBoundingClientRect()
       return (
