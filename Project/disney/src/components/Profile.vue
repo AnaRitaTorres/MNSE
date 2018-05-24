@@ -96,13 +96,15 @@ export default {
 }
 #cover_pic{
   opacity: 0.5;
+  height: 500px;
+  width: 100%;
 }
 #location{
   padding-bottom:0px;
   background-color: transparent;
   border: none;
   left: 35%;
-  top: 35%;
+  top: 60%;
   position: absolute;
 }
 #location h4, h5 {

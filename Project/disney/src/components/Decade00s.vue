@@ -43,7 +43,7 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">2001	 - Atlantis: The Lost Empire</h5>
+                  <h5 class="mt-0">2001 - Atlantis: The Lost Empire</h5>
                   <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
