@@ -104,7 +104,7 @@
                 <b-media>
                   <h5 class="mt-0">1934 - Tortoise and the Hare</h5>
                   <br>
-                  <p>Disney releases another adapted fable, the <span class"italic">Tortoise and the Hare</span>, winning another academy award for it and further establishing the fable's popularity. The movie, however, diverges from the original fable in some aspects like the competition aspect of the race instead of a challenge between the two characters. It is also believed that the hare's smug attitude is what inspired later Bugs Bunny's attitude in the cartoons.</p>
+                  <p>Disney releases another adapted fable, the <span class="italic">Tortoise and the Hare</span>, winning another academy award for it and further establishing the fable's popularity. The movie, however, diverges from the original fable in some aspects like the competition aspect of the race instead of a challenge between the two characters. It is also believed that the hare's smug attitude is what inspired later Bugs Bunny's attitude in the cartoons.</p>
                   <br>
                   <div class="timelineImg">
                     <img src="../assets/tortoise_hare.jpg" width="500" fluid alt="The Tortoise and the Hare"/>
