@@ -3,12 +3,12 @@
     <Header></Header>
     <b-container class="profile_con">
         <div id="cover">
-            <b-img id="cover_pic" src="https://lorempixel.com/1024/400/" fluid alt="Responsive image" />
+            <b-img id="cover_pic" v-bind:src="userData.cover_pic" fluid alt="Responsive image" />
             <b-card id="location">
-                <h4>Username</h4>
+                <h4>{{ userData.name }}</h4>
                 <h5>
                     <i class="fa fa-location-arrow"></i>
-                    City, Country
+                    {{ userData.location }}
                 </h5>
             </b-card>
         </div>
@@ -16,51 +16,35 @@
             <b-col md="3">
                 <b-card id="personal_info">
                     <div id="profile_pic">
-                        <b-img src="/static/images/profile_pic.jpg" fluid alt="Responsive image" />
+                        <b-img v-bind:src="userData.profile_pic" fluid alt="Responsive image" />
                     </div>
                     <div id="button">
                         <b-button id="follow" href="#" >+ Follow</b-button>
                     </div>
                     <h6 class="main_text">About</h6>
                     <p>
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        {{ userData.description }}
                     </p>
-                    <h6 class="main_text">Followers 100 </h6>
-                    <h6 class="main_text">Following 100 </h6>
+                    <h6 class="main_text">Followers {{ followers.length }} </h6>
+                    <h6 class="main_text">Following {{ followings.length }} </h6>
                 </b-card>
             </b-col>
             <b-col id="disney_info" md="8">
             <h4>Favourite Films</h4>
             <b-card id="film_info">
                 <b-row>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
+                  <!-- eslint-disable vue/valid-v-for -->
+                  <b-col v-for="item in displayMovies">
+                    <b-img v-bind:src="dbURL + 'static/movies/' + item.pic" fluid alt="Responsive image" />
+                  </b-col>
                 </b-row>
             </b-card>
             <h4>Favourite Characters</h4>
             <b-card id="character_info">
                 <b-row>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
-                    </b-col>
-                    <b-col>
-                            <b-img src="/static/images/film.jpeg" fluid alt="Responsive image" />
+                  <!-- eslint-disable vue/valid-v-for -->
+                    <b-col v-for="item in displayCharacters">
+                            <b-img v-bind:src="dbURL + 'static/characters/' + item.pic" fluid alt="Responsive image" />
                     </b-col>
                 </b-row>
             </b-card>
@@ -77,6 +61,92 @@ export default {
   name: 'profile',
   components: {
     Header
+  },
+  data () {
+    return {
+      id: 0,
+      userData: {
+        name: 'Loading...',
+        description: 'Loading...',
+        profile_pic: 'http://localhost:8420/static/default_pic.jpg',
+        cover_pic: 'http://localhost:8420/static/default_cover.jpg',
+        location: 'Neverland'
+      },
+      dbURL: 'http://localhost:8420/',
+      followers: [],
+      followings: [],
+      characters: [],
+      displayCharacters: [],
+      charPage: 0,
+      movies: [],
+      movPage: 0,
+      displayMovies: []
+    }
+  },
+  created () {
+    let page = this
+    let id = this.$route.query.id
+    if (id === null || id === undefined) {
+      id = require('../scripts/cookies').getCookie('id')
+    }
+    this.id = id
+    if (id !== null && id !== undefined) {
+      this.$http.get(this.dbURL + 'getUser?id=' + id).then(
+        function (res) {
+          if (!res.body.success)window.location.replace(('/'))
+          page.userData = res.body.content
+          page.userData.profile_pic = (page.userData.profile_pic === null) ? page.dbURL + 'static/default_pic.jpg' : page.dbURL + 'static/users/profile/' + page.id + '/' + page.userData.profile_pic
+          page.userData.cover_pic = (page.userData.cover_pic === null) ? page.dbURL + 'static/default_cover.jpg' : page.dbURL + 'static/users/cover/' + page.id + '/' + page.userData.cover_pic
+          if (page.userData.description === null) page.userData.description = 'No description provided'
+          if (page.userData.location === null) page.userData.location = 'Neverland'
+        },
+        function (res) {
+          window.location.replace(('/'))
+        }
+      )
+      this.$http.get(this.dbURL + 'getFollowers?id=' + id).then(
+        function (res) {
+          page.followers = res.body.content
+        }
+      )
+      this.$http.get(this.dbURL + 'getFollowings?id=' + id).then(
+        function (res) {
+          page.followings = res.body.content
+        }
+      )
+      this.$http.get(this.dbURL + 'getFavouriteCharacters?id=' + id).then(
+        function (res) {
+          page.characters = []
+          page.charPage = 0
+          let content = res.body.content
+          // divide into x projects to appear in different tabs
+          for (let i = 0; i < content.length; i += 4) {
+            if (content.length >= 4) {
+              page.characters.push(content.slice(i, i + 4))
+            } else {
+              page.characters.push(content)
+            }
+          }
+          page.displayCharacters = page.characters[page.charPage]
+        }
+      )
+      this.$http.get(this.dbURL + 'getFavouriteMovies?id=' + id).then(
+        function (res) {
+          page.movies = []
+          page.movPage = 0
+          let content = res.body.content
+          // divide into x projects to appear in different tabs
+          for (let i = 0; i < content.length; i += 4) {
+            if (content.length >= 4) {
+              page.movies.push(content.slice(i, i + 4))
+            } else {
+              page.movies.push(content)
+            }
+          }
+          page.displayMovies = page.movies[page.movPage]
+        }
+      )
+    }
   }
 }
 </script>
