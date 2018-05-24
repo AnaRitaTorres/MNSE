@@ -13,7 +13,7 @@
                         Logout
                     </b-button>
                     <b-modal ref="myModalRef" hide-footer title="Log In or Register">
-                        <div class="d-block text-center">
+                        <div class="d-block text-center" v-if="logTab">
                             <h3>Log In</h3>
                             <b-form-group
                                 id="fieldset1"
@@ -36,9 +36,13 @@
                             <b-button v-on:click="login">
                               Log In
                             </b-button>
+                            <br> <!-- não havia uma tag que punha um tracinho ? -->
+                            <b-button v-on:click="logTab = false">
+                                Did you register yet? If not then please do!
+                            </b-button>
                         </div>
                         <br> <!-- ñ havia uma class/tag que punha um tracinho? -->
-                        <div class="d-block text-center">
+                        <div class="d-block text-center" v-if="!logTab">
                             <h3>Register</h3>
                             <b-form-group
                               id="fieldset3"
@@ -74,6 +78,10 @@
                             </b-form-group>
                             <b-button v-on:click="register">
                                 Register
+                            </b-button>
+                            <br> <!-- não havia uma tag que punha um tracinho ? -->
+                            <b-button v-on:click="logTab = true">
+                                Already Registered? Please log in!
                             </b-button>
                         </div>
                     </b-modal>
@@ -184,6 +192,7 @@ export default {
     return {
       email: '',
       isLogged: false,
+      logTab: true,
       password: '',
       errorMsg: '',
       dbURL: 'http://localhost:8420/',
