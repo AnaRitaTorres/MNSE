@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="home">
   <Header></Header>
   <div id="homeBackground">
     <b-img src="./static/images/disney logo.jpg" fluid alt="Responsive disney image" />
@@ -118,11 +118,14 @@ export default {
 }
 </script>
 <style>
+  #home{
+    margin:0;
+  }
   #homeBackground{
     position: relative;
     left: 0;
     right: 0;
-  }
+   }
   #wheel{
     /*position: absolute;*/
     left: 0;
@@ -171,6 +174,7 @@ export default {
   }
   #wheelOutside{
     z-index: 9;
+    padding-bottom: 0;
   }
   #wheelInside{
     left: 0;
