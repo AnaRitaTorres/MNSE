@@ -114,7 +114,7 @@ export default {
           page.followings = res.body.content
         }
       )
-      this.$http.get(this.dbURL + 'getCharacters?id=' + id).then(
+      this.$http.get(this.dbURL + 'getFavouriteCharacters?id=' + id).then(
         function (res) {
           page.characters = []
           page.charPage = 0
@@ -130,7 +130,7 @@ export default {
           page.displayCharacters = page.characters[page.charPage]
         }
       )
-      this.$http.get(this.dbURL + 'getMovies?id=' + id).then(
+      this.$http.get(this.dbURL + 'getFavouriteMovies?id=' + id).then(
         function (res) {
           page.movies = []
           page.movPage = 0

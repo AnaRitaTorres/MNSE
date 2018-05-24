@@ -69,8 +69,8 @@ function unfollow(db, id1, id2, sendFunc) {
 }
 
 function register(db, info, sendFunc) {
-    var query = 'INSERT INTO User(name, email, password) VALUES (?,?,MD5(?))';
-    db.query(query, [info.name, info.email, info.password], function (err, results) {
+    var query = 'INSERT INTO User(name, email, password, description, location) VALUES (?,?,MD5(?), ?, ?)';
+    db.query(query, [info.name, info.email, info.password, info.description, info.location], function (err, results) {
         if (err) {
             sendFunc(err);
         }
