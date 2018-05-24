@@ -1,8 +1,15 @@
 <template>
 <div id="home">
   <Header></Header>
+  <br>
+  <br>
+  <br>
   <div id="homeBackground">
     <b-img src="./static/images/disney logo.jpg" fluid alt="Responsive disney image" />
+    <div id="buttonDiv">
+      <b-img id="button_l" class="buttons" src="./static/images/arrow_l.png" fluid alt="arrow_l" v-on:click="rotate(-1)"/>
+      <b-img id="button_r" class="buttons" src="./static/images/arrow_r.png" fluid alt="arrow_r" v-on:click="rotate(1)"/>
+    </div>
     <div id="wheel">
       <b-img v-bind:style="[baseStyles, overrideStyles, rotatingAnim]" center id="wheelOutside" c src="./static/images/wheel.png" fluid alt="Responsive wheel image" />
       <div id="wheelInside" v-bind:style="[baseStyles, overrideStyles, rotatingAnim]">
@@ -44,10 +51,6 @@
           </a>
         </div>
       </div>
-    </div>
-    <div id="buttonDiv">
-      <b-img id="button_l" class="buttons" src="./static/images/arrow_l.png" fluid alt="arrow_l" v-on:click="rotate(-1)"/>
-      <b-img id="button_r" class="buttons" src="./static/images/arrow_r.png" fluid alt="arrow_r" v-on:click="rotate(1)"/>
     </div>
   </div>
 </div>
@@ -130,9 +133,9 @@ export default {
     /*position: absolute;*/
     left: 0;
     right: 0;
-    width: 50%;
-    height: 50%;
-    top: 25%;
+    width: 45%;
+    height: 45%;
+    top: 5%;
     margin: 0 auto;
     position: absolute;
     /*-webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 88%);*/
@@ -142,7 +145,6 @@ export default {
     text-align: center;
   }
   #buttonDiv{
-    z-index: 10;
     text-align: center;
     left: 0;
     right: 0;
