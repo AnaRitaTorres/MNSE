@@ -14,39 +14,39 @@
       <b-img v-bind:style="[baseStyles, overrideStyles, rotatingAnim]" center id="wheelOutside" c src="./static/images/wheel.png" fluid alt="Responsive wheel image" />
       <div id="wheelInside" v-bind:style="[baseStyles, overrideStyles, rotatingAnim]">
         <div class="wheelC" >
-          <a href="#" id="wheel1" v-bind:class="wheel[1]">
+          <a href="/#/decade/30s" id="wheel1" v-bind:class="wheel[1]">
             <b-img id="char1" class="char" src="./static/images/char1.png" fluid alt="char1"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC1" >
-          <a href="#" id="wheel2" v-bind:class="wheel[2]">
+          <a href="/#/decade/40s" id="wheel2" v-bind:class="wheel[2]">
             <b-img id="char2" class="char" src="./static/images/char2.png" fluid alt="char2"/>
           </a>
-          <a href="#" id="wheel9" v-bind:class="wheel[9]">
+          <a href="/#/decade/010s" id="wheel9" v-bind:class="wheel[9]">
             <b-img id="char9" class="char" src="./static/images/char9.png" fluid alt="char9"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC2" >
-          <a href="#" id="wheel3" v-bind:class="wheel[3]">
+          <a href="/#/decade/50s" id="wheel3" v-bind:class="wheel[3]">
             <b-img id="char3" class="char" src="./static/images/char3.png" fluid alt="char3"/>
           </a>
-          <a href="#" id="wheel8" v-bind:class="wheel[8]">
+          <a href="/#/decade/00s" id="wheel8" v-bind:class="wheel[8]">
             <b-img id="char8" class="char" src="./static/images/char8.png" fluid alt="char8"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC3">
-          <a href="#" id="wheel4" v-bind:class="wheel[4]">
+          <a href="/#/decade/60s" id="wheel4" v-bind:class="wheel[4]">
             <b-img id="char4" class="char" src="./static/images/char4.png" fluid alt="char4"/>
           </a>
-          <a href="#" id="wheel7" v-bind:class="wheel[7]">
+          <a href="/#/decade/90s" id="wheel7" v-bind:class="wheel[7]">
             <b-img id="char7" class="char" src="./static/images/char7.png" fluid alt="char7"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC4">
-          <a href="#" id="wheel5" v-bind:class="wheel[5]">
+          <a href="/#/decade/70s" id="wheel5" v-bind:class="wheel[5]">
             <b-img id="char5" class="char" src="./static/images/char5.png" fluid alt="char5"/>
           </a>
-          <a href="#" id="wheel6" v-bind:class="wheel[6]">
+          <a href="/#/decade/80s" id="wheel6" v-bind:class="wheel[6]">
             <b-img id="char6" class="char" src="./static/images/char6.png" fluid alt="char6"/>
           </a>
         </div>

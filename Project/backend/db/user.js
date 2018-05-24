@@ -68,6 +68,19 @@ function unfollow(db, id1, id2, sendFunc) {
     })
 }
 
+function searchEverything(db, string, sendFunc){
+    var query = `(SELECT id, name, ? as type FROM User WHERE name like ? )
+    UNION (SELECT id, name, ? as type FROM \`Character\` WHERE name like ? ) 
+    UNION (SELECT id, name, ? as type FROM Movie WHERE name like ? )`;
+    var search = '%' + string + '%';
+    db.query(query, ['user', search, 'char', search, 'mov', search], function (err, results) {
+        if (err) {
+            sendFunc(err);
+        }
+        else sendFunc(results);
+    })
+}
+
 function register(db, info, sendFunc) {
     var query = 'INSERT INTO User(name, email, password, description, location) VALUES (?,?,MD5(?), ?, ?)';
     db.query(query, [info.name, info.email, info.password, info.description, info.location], function (err, results) {
@@ -102,5 +115,6 @@ module.exports.getFollowers = getFollowers;
 module.exports.getFollowings = getFollowings;
 module.exports.follow = follow;
 module.exports.unfollow = unfollow;
+module.exports.search = searchEverything;
 module.exports.register = register;
 module.exports.login = login;

@@ -102,9 +102,12 @@ app.get('/getUser', function (req, res) {
     require('./db/user').getUser(db, id, send);
 });
 
-// TODO eventualmente fazer isto
-app.get('/searchUser', function (req, res) {
-   res.send('rip');
+app.get('/search', function (req, res) {
+    var search = req.query.search;
+    var send = function (content) {
+        require('./db/connect').sendGet(res, content);
+    };
+    require('./db/user').search(db, search, send);
 });
 
 app.post('/register', function (req, res) {
