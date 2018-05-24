@@ -69,9 +69,9 @@ function unfollow(db, id1, id2, sendFunc) {
 }
 
 function searchEverything(db, string, sendFunc){
-    var query = `(SELECT id, name, ? as type FROM User WHERE name like ? )
-    UNION (SELECT id, name, ? as type FROM \`Character\` WHERE name like ? ) 
-    UNION (SELECT id, name, ? as type FROM Movie WHERE name like ? )`;
+    var query = `(SELECT id, name, description, profile_pic as pic, ? as type FROM User WHERE name like ? )
+    UNION (SELECT id, name, description, pic, ? as type FROM \`Character\` WHERE name like ? ) 
+    UNION (SELECT id, name, description, pic, ? as type FROM Movie WHERE name like ? )`;
     var search = '%' + string + '%';
     db.query(query, ['user', search, 'char', search, 'mov', search], function (err, results) {
         if (err) {
