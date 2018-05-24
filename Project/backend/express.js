@@ -111,7 +111,9 @@ app.post('/register', function (req, res) {
     var info = {
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        description: req.body.description,
+        location: req.body.location
     };
     if(info.name === undefined || info.email === undefined || info.password === undefined)
         return res.send({success: false, content: 'Missing Parameters!'});
