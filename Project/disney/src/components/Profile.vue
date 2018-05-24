@@ -13,7 +13,7 @@
             </b-card>
         </div>
         <b-row>
-            <b-col md="3">
+            <b-col sm="2" md="3">
                 <b-card id="personal_info">
                     <div id="profile_pic">
                         <b-img v-bind:src="userData.profile_pic" fluid alt="Responsive image" />
@@ -33,8 +33,7 @@
             <h4>Favourite Films</h4>
             <b-card id="film_info">
                 <b-row>
-                  <!-- eslint-disable vue/valid-v-for -->
-                  <b-col v-for="item in movies">
+                  <b-col v-for="item in displayMovies" :key="item.pic">
                     <b-img v-bind:src="dbURL + 'static/movies/' + item.pic" fluid alt="Responsive image" />
                   </b-col>
                 </b-row>
@@ -42,9 +41,8 @@
             <h4>Favourite Characters</h4>
             <b-card id="character_info">
                 <b-row>
-                  <!-- eslint-disable vue/valid-v-for -->
-                    <b-col v-for="item in characters">
-                            <b-img v-bind:src="dbURL + 'static/characters/' + item.pic" fluid alt="Responsive image" />
+                    <b-col v-for="item in displayCharacters" :key="item.pic">
+                      <b-img v-bind:src="dbURL + 'static/characters/' + item.pic" fluid alt="Responsive image" />
                     </b-col>
                 </b-row>
             </b-card>
