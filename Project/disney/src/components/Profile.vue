@@ -34,7 +34,7 @@
             <b-card id="film_info">
                 <b-row>
                   <!-- eslint-disable vue/valid-v-for -->
-                  <b-col v-for="item in movies">
+                  <b-col v-for="item in displayMovies">
                     <b-img v-bind:src="dbURL + 'static/movies/' + item.pic" fluid alt="Responsive image" />
                   </b-col>
                 </b-row>
@@ -43,7 +43,7 @@
             <b-card id="character_info">
                 <b-row>
                   <!-- eslint-disable vue/valid-v-for -->
-                    <b-col v-for="item in characters">
+                    <b-col v-for="item in displayCharacters">
                             <b-img v-bind:src="dbURL + 'static/characters/' + item.pic" fluid alt="Responsive image" />
                     </b-col>
                 </b-row>
@@ -76,7 +76,11 @@ export default {
       followers: [],
       followings: [],
       characters: [],
-      movies: []
+      displayCharacters: [],
+      charPage: 0,
+      movies: [],
+      movPage: 0,
+      displayMovies: []
     }
   },
   created () {
@@ -93,6 +97,8 @@ export default {
           page.userData = res.body.content
           page.userData.profile_pic = (page.userData.profile_pic === null) ? page.dbURL + 'static/default_pic.jpg' : page.dbURL + 'static/users/profile/' + page.id + '/' + page.userData.profile_pic
           page.userData.cover_pic = (page.userData.cover_pic === null) ? page.dbURL + 'static/default_cover.jpg' : page.dbURL + 'static/users/cover/' + page.id + '/' + page.userData.cover_pic
+          if (page.userData.description === null) page.userData.description = 'No description provided'
+          if (page.userData.location === null) page.userData.location = 'Neverland'
         },
         function (res) {
           window.location.replace(('/'))
@@ -110,12 +116,34 @@ export default {
       )
       this.$http.get(this.dbURL + 'getCharacters?id=' + id).then(
         function (res) {
-          page.characters = res.body.content
+          page.characters = []
+          page.charPage = 0
+          let content = res.body.content
+          // divide into x projects to appear in different tabs
+          for (let i = 0; i < content.length; i += 4) {
+            if (content.length >= 4) {
+              page.characters.push(content.slice(i, i + 4))
+            } else {
+              page.characters.push(content)
+            }
+          }
+          page.displayCharacters = page.characters[page.charPage]
         }
       )
       this.$http.get(this.dbURL + 'getMovies?id=' + id).then(
         function (res) {
-          page.movies = res.body.content
+          page.movies = []
+          page.movPage = 0
+          let content = res.body.content
+          // divide into x projects to appear in different tabs
+          for (let i = 0; i < content.length; i += 4) {
+            if (content.length >= 4) {
+              page.movies.push(content.slice(i, i + 4))
+            } else {
+              page.movies.push(content)
+            }
+          }
+          page.displayMovies = page.movies[page.movPage]
         }
       )
     }
