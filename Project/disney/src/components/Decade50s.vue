@@ -133,7 +133,24 @@
         </ul>
       </section>
     </div>
-      <br>
+    <br>
+    <div class="decadeReview row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">The 50s in Review</h5>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/D3seUpCC2aI" allowfullscreen></b-embed>
+                  </div>
+                </b-media>
+              </b-card>
+            </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <br>
     <div class="decadeRouter row">
       <div class="col-md-5"></div>
       <div class="col-md-2">
@@ -301,5 +318,8 @@ div .timeline_section{
 }
 .timelineCard .video{
   margin: 4% !important;
+}
+.decadeReview .timelineElement *{
+  background-color: #e1f7d5;
 }
 </style>
