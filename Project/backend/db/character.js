@@ -19,7 +19,7 @@ function getCharacters(db, sendFunc) {
 }
 
 function getFavouriteCharacters(db, id, sendFunc) {
-    var query = 'SELECT `Character`.* FROM `Character` INNER JOIN FavouriteCharacter ON id = idCharacter WHERE id = ?';
+    var query = 'SELECT `Character`.* FROM `Character` INNER JOIN FavouriteCharacter ON id = idCharacter WHERE idUser = ?';
     db.query(query, id, function (err, results) {
         if (err) {
             sendFunc(err);

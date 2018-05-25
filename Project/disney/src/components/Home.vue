@@ -1,52 +1,55 @@
 <template>
 <div id="home">
   <Header></Header>
+  <br>
+  <br>
+  <br>
   <div id="homeBackground">
     <b-img src="./static/images/disney logo.jpg" fluid alt="Responsive disney image" />
+    <div id="buttonDiv">
+      <b-img id="button_l" class="buttons" src="./static/images/arrow_l.png" fluid alt="arrow_l" v-on:click="rotate(-1)"/>
+      <b-img id="button_r" class="buttons" src="./static/images/arrow_r.png" fluid alt="arrow_r" v-on:click="rotate(1)"/>
+    </div>
     <div id="wheel">
       <b-img v-bind:style="[baseStyles, overrideStyles, rotatingAnim]" center id="wheelOutside" c src="./static/images/wheel.png" fluid alt="Responsive wheel image" />
       <div id="wheelInside" v-bind:style="[baseStyles, overrideStyles, rotatingAnim]">
         <div class="wheelC" >
-          <a href="#" id="wheel1" v-bind:class="wheel[1]">
+          <a href="/#/decade/30s" id="wheel1" v-bind:class="wheel[1]">
             <b-img id="char1" class="char" src="./static/images/char1.png" fluid alt="char1"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC1" >
-          <a href="#" id="wheel2" v-bind:class="wheel[2]">
+          <a href="/#/decade/40s" id="wheel2" v-bind:class="wheel[2]">
             <b-img id="char2" class="char" src="./static/images/char2.png" fluid alt="char2"/>
           </a>
-          <a href="#" id="wheel9" v-bind:class="wheel[9]">
+          <a href="/#/decade/010s" id="wheel9" v-bind:class="wheel[9]">
             <b-img id="char9" class="char" src="./static/images/char9.png" fluid alt="char9"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC2" >
-          <a href="#" id="wheel3" v-bind:class="wheel[3]">
+          <a href="/#/decade/50s" id="wheel3" v-bind:class="wheel[3]">
             <b-img id="char3" class="char" src="./static/images/char3.png" fluid alt="char3"/>
           </a>
-          <a href="#" id="wheel8" v-bind:class="wheel[8]">
+          <a href="/#/decade/00s" id="wheel8" v-bind:class="wheel[8]">
             <b-img id="char8" class="char" src="./static/images/char8.png" fluid alt="char8"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC3">
-          <a href="#" id="wheel4" v-bind:class="wheel[4]">
+          <a href="/#/decade/60s" id="wheel4" v-bind:class="wheel[4]">
             <b-img id="char4" class="char" src="./static/images/char4.png" fluid alt="char4"/>
           </a>
-          <a href="#" id="wheel7" v-bind:class="wheel[7]">
+          <a href="/#/decade/90s" id="wheel7" v-bind:class="wheel[7]">
             <b-img id="char7" class="char" src="./static/images/char7.png" fluid alt="char7"/>
           </a>
         </div>
         <div class="wheelC" id="wheelC4">
-          <a href="#" id="wheel5" v-bind:class="wheel[5]">
+          <a href="/#/decade/70s" id="wheel5" v-bind:class="wheel[5]">
             <b-img id="char5" class="char" src="./static/images/char5.png" fluid alt="char5"/>
           </a>
-          <a href="#" id="wheel6" v-bind:class="wheel[6]">
+          <a href="/#/decade/80s" id="wheel6" v-bind:class="wheel[6]">
             <b-img id="char6" class="char" src="./static/images/char6.png" fluid alt="char6"/>
           </a>
         </div>
-      </div>
-      <div id="buttonDiv">
-        <b-img id="button_l" class="buttons" src="./static/images/arrow_l.png" fluid alt="arrow_l" v-on:click="rotate(-1)"/>
-        <b-img id="button_r" class="buttons" src="./static/images/arrow_r.png" fluid alt="arrow_r" v-on:click="rotate(1)"/>
       </div>
     </div>
   </div>
@@ -130,9 +133,9 @@ export default {
     /*position: absolute;*/
     left: 0;
     right: 0;
-    width: 50%;
-    height: 50%;
-    top: 25%;
+    width: 45%;
+    height: 45%;
+    top: 5%;
     margin: 0 auto;
     position: absolute;
     /*-webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 88%);*/
@@ -142,29 +145,30 @@ export default {
     text-align: center;
   }
   #buttonDiv{
-    z-index: 8;
     text-align: center;
     left: 0;
     right: 0;
-    top: -240%;
+    top: 36%;
     margin: 0 auto;
-    position: relative;
+    position: absolute;
   }
   .buttons{
-    width: 25%;
-    height: 25%;
+    width: 10%;
+    height: 10%;
   }
   #button_l{
+    margin-left: 15%;
     float: left;
   }
   #button_r{
+    margin-right: 15%;
     float:right;
   }
   .buttons:hover{
     cursor: pointer;
   }
   #wheelC1{
-    margin-top: -2%;
+    margin-top: -4%;
   }
   #wheelC2{
     margin-top: 5%;
@@ -193,8 +197,8 @@ export default {
   }
   #char2{
     position: relative;
-    left: 30%;
-    right: 30%;
+    left: 28%;
+    right: 28%;
     transform: rotate(40deg);
   }
   #char3{
@@ -207,8 +211,8 @@ export default {
   }
   #char4{
     position: relative;
-    left: 35%;
-    right: 35%;
+    left: 40%;
+    right: 40%;
     transform: rotate(120deg);
   }
   #char5{
@@ -229,8 +233,8 @@ export default {
   }
   #char7{
     position: relative;
-    left: -35%;
-    right: -35%;
+    left: -40%;
+    right: -40%;
     width: 15%;
     height: 15%;
     transform: rotate(-120deg);
