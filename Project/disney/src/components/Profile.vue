@@ -13,7 +13,7 @@
             </b-card>
         </div>
         <b-row>
-            <b-col sm="2" md="3">
+            <b-col md="3">
                 <b-card id="personal_info">
                     <div id="profile_pic">
                         <b-img v-bind:src="userData.profile_pic" fluid alt="Responsive image" />
@@ -153,7 +153,7 @@ export default {
 #personal_info{
    top: -20%;
    left: 7%;
-   height: 70%;
+   height: 600px;
    background-color:#F7E1D3;
 }
 #profile_pic{
