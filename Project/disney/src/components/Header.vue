@@ -135,6 +135,7 @@ export default {
     },
     profile () {
       window.location.replace(('/#/profile'))
+      if (this.$route.path === '/profile') window.location.reload(true)
     },
     register () {
       if (!this.stateR) return false

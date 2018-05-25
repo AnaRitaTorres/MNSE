@@ -31,10 +31,18 @@
             <b-modal ref="myModalRef" hide-footer title="Followers">
               <div class="d-block text-center">
                 <div v-if="followers.length > 0">
-                  <h6>{{followers[curFollower].name}}</h6>
-                  <a v-bind:href="'/#/profile?id=' + followers[curFollower].id" v-on:click="closeModal2">
-                    <b-img class="banan" v-bind:src="followers[curFollower].profile_pic" fluid alt="Responsive image" />
-                  </a>
+                    <h6>{{followers[curFollower].name}}</h6>
+                    <a v-bind:href="'/#/profile?id=' + followers[curFollower].id" v-on:click="closeModal2">
+                      <b-img class="banan" v-bind:src="followers[curFollower].profile_pic" fluid alt="Responsive image" />
+                    </a>
+                  <div>
+                    <a class="left" v-on:click="curFollower -= (curFollower === 0) ? 0 : 1">
+                      before
+                    </a>
+                    <a class="right" v-on:click="curFollower += (curFollower === (followers.length - 1)) ? 0 : 1">
+                      next
+                    </a>
+                  </div>
                 </div>
               </div>
             </b-modal>
@@ -45,6 +53,14 @@
                   <a v-bind:href="'/#/profile?id=' + followings[curFollowing].id" v-on:click="closeModal2">
                     <b-img class="banan" v-bind:src="followings[curFollowing].profile_pic" fluid alt="Responsive image" />
                   </a>
+                  <div>
+                    <a class="left" v-on:click="curFollowing -= (curFollowing === 0) ? 0 : 1">
+                      before
+                    </a>
+                    <a class="right" v-on:click="curFollowing += (curFollowing === (followings.length - 1)) ? 0 : 1">
+                      next
+                    </a>
+                  </div>
                 </div>
               </div>
             </b-modal>
