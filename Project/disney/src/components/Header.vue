@@ -214,7 +214,7 @@ export default {
   },
   created () {
     this.isLogged = (require('../scripts/cookies').getCookie('id') !== undefined)
-    this.username = require('../scripts/cookies').getCookie('name')
+    this.username = require('../scripts/cookies').getCookie('name').split(' ')[0]
   }
 }
 </script>

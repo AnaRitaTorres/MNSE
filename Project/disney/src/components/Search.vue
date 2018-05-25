@@ -36,6 +36,8 @@
                   <br>
                   <div class="timelineImg">
                     <img v-bind:src="item.pic" fluid alt="Pic alt"/>
+                    <br>
+                    <br>
                     <div>
                       <a v-if="item.type === 'user'" v-bind:href="item.url" class="banan">Check out {{item.name}} profile! </a>
                       <a v-if="item.type === 'char'" v-on:click="updateCharacters(item.id)" class="banan">Add/Remove {{item.name}} from your list! </a>
@@ -279,7 +281,12 @@ div .timeline_section{
   text-align: center;
 }
 a.banan {
+  text-decoration: none;
+  color: black;
   cursor: pointer;
+}
+a.banan:hover {
+  text-decoration: none;
 }
 .timelineImg img{
   max-width: 20%;

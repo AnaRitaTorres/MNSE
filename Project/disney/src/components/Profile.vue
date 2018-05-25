@@ -36,11 +36,9 @@
                       <b-img class="banan" v-bind:src="followers[curFollower].profile_pic" fluid alt="Responsive image" />
                     </a>
                   <div>
-                    <a class="left" v-on:click="curFollower -= (curFollower === 0) ? 0 : 1">
-                      before
+                    <a class="left fa fa-arrow-left" v-on:click="curFollower -= (curFollower === 0) ? 0 : 1">
                     </a>
-                    <a class="right" v-on:click="curFollower += (curFollower === (followers.length - 1)) ? 0 : 1">
-                      next
+                    <a class="right fa fa-arrow-right" v-on:click="curFollower += (curFollower === (followers.length - 1)) ? 0 : 1">
                     </a>
                   </div>
                 </div>
@@ -54,11 +52,9 @@
                     <b-img class="banan" v-bind:src="followings[curFollowing].profile_pic" fluid alt="Responsive image" />
                   </a>
                   <div>
-                    <a class="left" v-on:click="curFollowing -= (curFollowing === 0) ? 0 : 1">
-                      before
+                    <a class="left fa fa-arrow-left" v-on:click="curFollowing -= (curFollowing === 0) ? 0 : 1">
                     </a>
-                    <a class="right" v-on:click="curFollowing += (curFollowing === (followings.length - 1)) ? 0 : 1">
-                      next
+                    <a class="right fa fa-arrow-right" v-on:click="curFollowing += (curFollowing === (followings.length - 1)) ? 0 : 1">
                     </a>
                   </div>
                 </div>
@@ -79,12 +75,11 @@
                 </div>
               </b-modal>
             </b-row>
+            <br>
             <div v-if="movies.length > 1">
-              <a class="left" v-on:click="movPage -= (movPage === 0) ? 0 : 1; displayMovies = movies[movPage]">
-                before
+              <a class="left fa fa-arrow-left" v-on:click="movPage -= (movPage === 0) ? 0 : 1; displayMovies = movies[movPage]">
               </a>
-              <a class="righti" v-on:click="movPage += (movPage === (movies.length - 1)) ? 0 : 1; displayMovies = movies[movPage]">
-                next
+              <a class="righti fa fa-arrow-right" v-on:click="movPage += (movPage === (movies.length - 1)) ? 0 : 1; displayMovies = movies[movPage]">
               </a>
             </div>
           </b-card>
@@ -95,12 +90,11 @@
                 <b-img class="imagem2" v-bind:src="dbURL + 'static/characters/' + item.pic" @click="showModal3(item.name, item.description)" fluid alt="Responsive image" />
               </b-col>
             </b-row>
+            <br>
             <div v-if="characters.length > 1">
-              <a class="left" v-on:click="charPage -= (charPage === 0) ? 0 : 1; displayCharacters = characters[charPage]">
-                before
+              <a class="left fa fa-arrow-left" v-on:click="charPage -= (charPage === 0) ? 0 : 1; displayCharacters = characters[charPage]">
               </a>
-              <a class="righti" v-on:click="charPage += (charPage === (charPage.length - 1)) ? 0 : 1; displayCharacters = characters[charPage]">
-                next
+              <a class="righti fa fa-arrow-right" v-on:click="charPage += (charPage === (charPage.length - 1)) ? 0 : 1; displayCharacters = characters[charPage]">
               </a>
             </div>
           </b-card>
@@ -285,12 +279,12 @@ export default {
   max-height: 25%;
 }
 .imagem1{
-  max-width: 60%;
-  max-height: 60%;
+  max-width: 200px;
+  max-height: 200px;
 }
 .imagem2{
-  max-width: 75%;
-  max-height: 75%;
+  max-width: 100px;
+  max-height: 100px;
 }
 .righti{
   float: right;
@@ -326,6 +320,9 @@ export default {
   left: 7%;
   height: 600px;
   background-color:#e1f7d5;
+}
+#profile_pic img{
+  max-height: 300px;
 }
 #profile_pic{
   padding-bottom: 5%;
