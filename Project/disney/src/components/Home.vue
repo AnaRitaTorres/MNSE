@@ -168,7 +168,7 @@ export default {
     cursor: pointer;
   }
   #wheelC1{
-    margin-top: -2%;
+    margin-top: -4%;
   }
   #wheelC2{
     margin-top: 5%;
@@ -197,8 +197,8 @@ export default {
   }
   #char2{
     position: relative;
-    left: 30%;
-    right: 30%;
+    left: 28%;
+    right: 28%;
     transform: rotate(40deg);
   }
   #char3{
@@ -211,8 +211,8 @@ export default {
   }
   #char4{
     position: relative;
-    left: 35%;
-    right: 35%;
+    left: 40%;
+    right: 40%;
     transform: rotate(120deg);
   }
   #char5{
@@ -233,8 +233,8 @@ export default {
   }
   #char7{
     position: relative;
-    left: -35%;
-    right: -35%;
+    left: -40%;
+    right: -40%;
     width: 15%;
     height: 15%;
     transform: rotate(-120deg);

@@ -79,7 +79,7 @@
                 </div>
               </b-modal>
             </b-row>
-            <div>
+            <div v-if="movies.length > 1">
               <a class="left" v-on:click="movPage -= (movPage === 0) ? 0 : 1; displayMovies = movies[movPage]">
                 before
               </a>
@@ -95,7 +95,7 @@
                 <b-img class="imagem2" v-bind:src="dbURL + 'static/characters/' + item.pic" @click="showModal3(item.name, item.description)" fluid alt="Responsive image" />
               </b-col>
             </b-row>
-            <div>
+            <div v-if="characters.length > 1">
               <a class="left" v-on:click="charPage -= (charPage === 0) ? 0 : 1; displayCharacters = characters[charPage]">
                 before
               </a>
