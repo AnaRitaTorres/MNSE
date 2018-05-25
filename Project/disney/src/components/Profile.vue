@@ -79,6 +79,14 @@
                 </div>
               </b-modal>
             </b-row>
+            <div>
+              <a class="left" v-on:click="movPage -= (movPage === 0) ? 0 : 1; displayMovies = movies[movPage]">
+                before
+              </a>
+              <a class="righti" v-on:click="movPage += (movPage === (movies.length - 1)) ? 0 : 1; displayMovies = movies[movPage]">
+                next
+              </a>
+            </div>
           </b-card>
           <h4>Favourite Characters</h4>
           <b-card id="character_info">
@@ -87,6 +95,14 @@
                 <b-img v-bind:src="dbURL + 'static/characters/' + item.pic" @click="showModal3(item.name, item.description)" fluid alt="Responsive image" />
               </b-col>
             </b-row>
+            <div>
+              <a class="left" v-on:click="charPage -= (charPage === 0) ? 0 : 1; displayCharacters = characters[charPage]">
+                before
+              </a>
+              <a class="righti" v-on:click="charPage += (charPage === (charPage.length - 1)) ? 0 : 1; displayCharacters = characters[charPage]">
+                next
+              </a>
+            </div>
           </b-card>
         </b-col>
       </b-row>
@@ -267,6 +283,9 @@ export default {
 .banan{
   max-width: 25%;
   max-height: 25%;
+}
+.righti{
+  float: right;
 }
 .profile{
   background-color: #9AB7D3;
