@@ -69,6 +69,25 @@
       </section>
     </div>
     <br>
+    <div class="decadeReview row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">The 20s in Review</h5>
+                  <div class="timelineImg">
+                    <img src="../assets/20s.gif" fluid alt="Skeleton cello"/>
+                    <p>Silly Symphonies scene</p>
+                  </div>
+                </b-media>
+              </b-card>
+            </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <br>
+    <br>
     <div class="decadeRouter row">
       <div class="col-md-5"></div>
       <div class="col-md-2">
@@ -236,5 +255,9 @@ div .timeline_section{
 }
 .timelineCard .video{
   margin: 4% !important;
+}
+.decadeReview .timelineCard .timelineImg{
+  margin-left: 20% !important;
+  margin-top: 10% !important;
 }
 </style>
