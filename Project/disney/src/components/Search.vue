@@ -116,7 +116,7 @@ export default {
         function (res) {
           if (!res.body.success) {
             console.log('already added so lets remove')
-            this.$http.post(this.dbURL + 'removeMovie', obj).then(
+            this.$http.post(this.dbURL + 'auth/removeMovie', obj).then(
               function (res) {
                 if (!res.body.success) {
                   console.log('oops')
@@ -151,7 +151,7 @@ export default {
         function (res) {
           if (!res.body.success) {
             console.log('already added so lets remove')
-            this.$http.post(this.dbURL + 'removeCharacter', obj).then(
+            this.$http.post(this.dbURL + 'auth/removeCharacter', obj).then(
               function (res) {
                 if (!res.body.success) {
                   console.log('oops')
