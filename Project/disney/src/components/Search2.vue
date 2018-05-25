@@ -173,10 +173,10 @@ export default {
   },
   mounted () {
     this.query = this.$route.query.id
-    if (this.query === '') this.query = ' '
+    window.location.replace('/#/search?id=' + this.query)
     this.getSearch()
   },
-  name: 'Search',
+  name: 'Search2',
   components: {
     Header
   }

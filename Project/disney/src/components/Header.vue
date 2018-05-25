@@ -86,8 +86,8 @@
                             </a>
                         </div>
                     </b-modal>
-                    <b-nav-form id="search">
-                        <b-form-input  size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
+                    <b-nav-form id="search" @keydown.enter="searchFunction">
+                        <b-form-input  size="sm" class="mr-sm-2" type="text" v-model="search" placeholder="Search"/>
                     </b-nav-form>
                 </b-collapse>
              </b-navbar-nav>
@@ -100,6 +100,10 @@ export default {
   methods: {
     showModal () {
       this.$refs.myModalRef.show()
+    },
+    searchFunction () {
+      if (this.$route.path !== '/search') window.location.replace('/#/search?id=' + this.search)
+      else window.location.replace('/#/lmao?id=' + this.search)
     },
     login () {
       if (!this.state) return false
@@ -203,7 +207,8 @@ export default {
       name: '',
       description: '',
       location: '',
-      username: ''
+      username: '',
+      search: ''
     }
   },
   created () {
