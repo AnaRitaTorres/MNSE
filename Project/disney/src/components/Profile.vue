@@ -26,8 +26,28 @@
             <p>
               {{ userData.description }}
             </p>
-            <h6 class="main_text">Followers {{ followers.length }} </h6>
-            <h6 class="main_text">Following {{ followings.length }} </h6>
+            <h6 class="main_text" @click="showModal">Followers {{ followers.length }} </h6>
+            <h6 class="main_text" @click="showModal2">Following {{ followings.length }} </h6>
+            <b-modal ref="myModalRef" hide-footer title="Followers">
+              <div class="d-block text-center">
+                <div v-if="followers.length > 0">
+                  <h6>{{followers[curFollower].name}}</h6>
+                  <a v-bind:href="'/#/profile?id=' + followers[curFollower].id" v-on:click="closeModal2">
+                    <b-img class="banan" v-bind:src="followers[curFollower].profile_pic" fluid alt="Responsive image" />
+                  </a>
+                </div>
+              </div>
+            </b-modal>
+            <b-modal ref="myModalRef2" hide-footer title="Followings">
+              <div class="d-block text-center">
+                <div v-if="followings.length > 0">
+                  <h6>{{followings[curFollowing].name}}</h6>
+                  <a v-bind:href="'/#/profile?id=' + followings[curFollowing].id" v-on:click="closeModal2">
+                    <b-img class="banan" v-bind:src="followings[curFollowing].profile_pic" fluid alt="Responsive image" />
+                  </a>
+                </div>
+              </div>
+            </b-modal>
           </b-card>
         </b-col>
         <b-col id="disney_info" md="8">
@@ -81,7 +101,9 @@ export default {
       displayCharacters: [],
       displayMovies: [],
       canFollow: true,
-      isFollower: false
+      isFollower: false,
+      curFollower: 0,
+      curFollowing: 0
     }
   },
   methods: {
@@ -116,6 +138,15 @@ export default {
           page.isFollower = true
         }
       )
+    },
+    showModal () {
+      this.$refs.myModalRef.show()
+    },
+    showModal2 () {
+      this.$refs.myModalRef2.show()
+    },
+    closeModal2 () {
+      window.location.reload(true)
     }
   },
   created () {
@@ -145,13 +176,12 @@ export default {
           let ownId = require('../scripts/cookies').getCookie('id')
           if (page.id === ownId || ownId === undefined) {
             page.canFollow = false
-            return
           }
           for (let i = 0; i < page.followers.length; i++) {
             let fo = page.followers[i]
+            page.followers[i].profile_pic = (fo.profile_pic === null) ? page.dbURL + 'static/default_pic.jpg' : page.dbURL + 'static/users/profile/' + fo.id + '/' + fo.profile_pic
             if (parseInt(fo.id) === parseInt(ownId)) {
               page.isFollower = true
-              return
             }
           }
         }
@@ -159,6 +189,10 @@ export default {
       this.$http.get(this.dbURL + 'getFollowings?id=' + id).then(
         function (res) {
           page.followings = res.body.content
+          for (let i = 0; i < page.followings.length; i++) {
+            let fo = page.followings[i]
+            page.followings[i].profile_pic = (fo.profile_pic === null) ? page.dbURL + 'static/default_pic.jpg' : page.dbURL + 'static/users/profile/' + fo.id + '/' + fo.profile_pic
+          }
         }
       )
       this.$http.get(this.dbURL + 'getFavouriteCharacters?id=' + id).then(
@@ -200,7 +234,10 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Tajawal');
-
+.banan{
+  max-width: 25%;
+  max-height: 25%;
+}
 .profile{
   background-color: #9AB7D3;
   font-family: 'Tajawal', sans-serif;
