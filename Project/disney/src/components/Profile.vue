@@ -19,7 +19,8 @@
               <b-img v-bind:src="userData.profile_pic" fluid alt="Responsive image" />
             </div>
             <div id="button">
-              <b-button id="follow" href="#" >+ Follow</b-button>
+              <b-button id="follow" v-if="canFollow && !isFollower" v-on:click="followUser">+ Follow</b-button>
+              <b-button id="follow" v-if="canFollow && isFollower" v-on:click="followUser">- Unfollow</b-button>
             </div>
             <h6 class="main_text">About</h6>
             <p>
@@ -78,7 +79,43 @@ export default {
       charPage: 0,
       movPage: 0,
       displayCharacters: [],
-      displayMovies: []
+      displayMovies: [],
+      canFollow: true,
+      isFollower: false
+    }
+  },
+  methods: {
+    followUser () {
+      if (!this.canFollow || this.id === 0) {
+        return
+      }
+      let token = require('../scripts/cookies').getCookie('token')
+      if (token === undefined || token.length < 1) {
+        return
+      }
+      let obj = {
+        id: this.id,
+        token: token
+      }
+      let page = this
+      this.$http.post(this.dbURL + 'auth/followUser', obj).then(
+        function (res) {
+          if (!res.body.success) {
+            console.log('Already following, lets unfollow!')
+            this.$http.post(this.dbURL + 'auth/unfollowUser', obj).then(
+              function (res) {
+                if (!res.body.success) {
+                  console.log('oops')
+                  return
+                }
+                page.isFollower = false
+              }
+            )
+            return
+          }
+          page.isFollower = true
+        }
+      )
     }
   },
   created () {
@@ -105,6 +142,18 @@ export default {
       this.$http.get(this.dbURL + 'getFollowers?id=' + id).then(
         function (res) {
           page.followers = res.body.content
+          let ownId = require('../scripts/cookies').getCookie('id')
+          if (page.id === ownId || ownId === undefined) {
+            page.canFollow = false
+            return
+          }
+          for (let i = 0; i < page.followers.length; i++) {
+            let fo = page.followers[i]
+            if (parseInt(fo.id) === parseInt(ownId)) {
+              page.isFollower = true
+              return
+            }
+          }
         }
       )
       this.$http.get(this.dbURL + 'getFollowings?id=' + id).then(
@@ -144,7 +193,7 @@ export default {
           page.displayMovies = page.movies[page.movPage]
         }
       )
-    }
+    } else this.canFollow = false
   }
 }
 </script>
