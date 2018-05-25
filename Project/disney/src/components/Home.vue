@@ -148,20 +148,20 @@ export default {
     text-align: center;
     left: 0;
     right: 0;
-    top: 70%;
+    top: 36%;
     margin: 0 auto;
     position: absolute;
   }
   .buttons{
-    width: 15%;
-    height: 15%;
+    width: 10%;
+    height: 10%;
   }
   #button_l{
-    margin-left: 20%;
+    margin-left: 15%;
     float: left;
   }
   #button_r{
-    margin-right: 20%;
+    margin-right: 15%;
     float:right;
   }
   .buttons:hover{
