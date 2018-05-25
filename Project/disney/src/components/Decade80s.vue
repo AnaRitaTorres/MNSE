@@ -20,25 +20,39 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">1981 - The Fox and the Hound</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
-                  </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <br>
+                  <p>Disney starts off the decade with a sad animation movie, <span class="italic">The Fox and the Hound</span>.</p>
+                  <p>A wise owl and two henchmen birds see that orphaned fox cub Tod is 'found', adopted and 'raised' by childless human widow Tweed as a happy semi-wild pet in a rural backwater. He even makes friends with canine pup Copper, the apprentice of tweed's grumpy farmer neighbor Amos Slade's hunting dog Chief, who is kept in the dark. As they grow up, Amos takes Copper a season on hunting training, from which he returns as a routine prey killer. After a biter row with Amos, Tweed feels obliged to release Tod in the wild. There he is the prime prize for vindictive Amos and Chief's next great hunt, but both juveniles remember their friendship, leaving Copper with mixed loyalties and Tod challenged to act fox-smart.</p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/EGI-GbVBhqA" allowfullscreen></b-embed>
                   </div>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1982 - Tron</h5>
+                  <br>
+                  <p>Disney releases <span class="italic">Tron</span> in 1982, receving acclaim for the groundbreaking visuals featuring computer visuals. It would later on be reprised as Tron:Legacy.</p>
+                  <br>
+                  <div class="timelineImg">
+                    <img src="../assets/tron1982.jpg" width="500" fluid alt="Tron 1982."/>
+                    <p>Tron 1982's visuals.</p>
+                  </div>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1982 - Winnie the Pooh</h5>
+                  <br>
+                  <p>The Winnie the Pooh franchise continues with <span class="italic">Winnie the Pooh and a Day for Eeyore</span>, crossing them with the characters from <span class="italic">The Sword in the Stone</span>.</p>
                 </b-media>
               </b-card>
             </div>
@@ -48,13 +62,22 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">1983 - Mickey's Christmas Carol</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
+                  <br>
+                  <p>Disney decides to bring Mickey Mouse back to the pictures for his first feature film in over thirty years. It's an adaptation of Charles's Dickens novel with the same name. It also features several other characters from the universe, and the voice actors from the universe were used again. The movie was nominated for the Academy Award for Best Short film in the next year but lost. It was well received and featured a lot of extra scenes in the much later DVD print.</p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/Y_HJVPoZMMI" allowfullscreen></b-embed>
+                  </div>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1984 - Touchstone</h5>
+                  <br>
+                  <p>Disney releases the Touchstone Films label as an effort to reach more mature audicenes and releases a movie under the label later that year</p>
                 </b-media>
               </b-card>
             </div>
@@ -64,26 +87,28 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">1985 - The Black Cauldron</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
-                  </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <br>
+                  <p>In 1985 Disney releases <span class="italic">The Black Cauldron</span>, loosely based on novels. It was the first Disney animated movie to both have a PG rating and use computer generated visuals. Due to this latter fact, it was an expensive project that put Disney near bankrupcy.</p>
+                  <p>Taran is an assistant pigkeeper with boyish dreams of becoming a great warrior. However, he has to put the daydreaming aside when his charge, an oracular pig named Hen Wen, is kidnapped by an evil lord known as the Horned King. The villain hopes Hen will show him the way to The Black Cauldron, which has the power to create a giant army of unstoppable soldiers. With the aid of a stubborn princess, an exaggerating bard, and a pestering creature called Gurgi, Taran will try to save the world of Prydain from the Horned King. As the new friends face witches, elves, magic swords, and the Cauldron itself, Taran starts to learn what being a hero really means and that some things are more important than glory.</p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/vIeFB7Sx5-k" allowfullscreen></b-embed>
                   </div>
                 </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1986 - The Great Mouse Detective</h5>
+                  <br>
+                  <p>Disney releases <span class="italic">The Great Mouse Detective</span> in 1986, drawing inspiration from other detective tales like Sherlock Holmes and beginning the Disney Renaissance.</p>
+                  <p>The plot synopsis is as follows: In Victorian London, England, a little mouse girl's toymaker father is abducted by a peglegged bat. She enlists the aid of Basil of Baker Street, the rodent world's answer to Sherlock Holmes. The case expands as Basil uncovers the crime's link to a plot against the Crown itself.</p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/ayTXmzgtaZs" allowfullscreen></b-embed>
+                  </div>
+                  </b-media>
               </b-card>
             </div>
           </li>
