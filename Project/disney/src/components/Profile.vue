@@ -231,7 +231,7 @@ export default {
   top: -20%;
   left: 7%;
   height: 600px;
-  background-color:#F7E1D3;
+  background-color:#e1f7d5;
 }
 #profile_pic{
   padding-bottom: 5%;
@@ -260,7 +260,7 @@ export default {
   bottom: 20%;
   left: 6%;
   padding: 5%;
-  background-color:#F7E1D3;
+  background-color:#e1f7d5;
 }
 #character_info{
   margin-bottom:10%;

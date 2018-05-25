@@ -226,7 +226,7 @@ div .timeline_section{
   bottom: 0;
   width: 950px;
   padding: 15px;
-  background: #F7E1D3;
+  background: #e1f7d5;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
 }
 .timeline ul li .timelineElement::before{
@@ -243,7 +243,7 @@ div .timeline_section{
 .timeline ul li:nth-child(odd) .timelineElement::before, .timeline ul li:nth-child(even) .timelineElement::before{
   left: -15px;
   border-width: 8px 16px 8px 0;
-  border-color: transparent #F7E1D3 transparent transparent;
+  border-color: transparent #e1f7d5 transparent transparent;
 }
 .timeline ul li::after {
   background: #406b94;
