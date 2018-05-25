@@ -19,26 +19,39 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1970 - The Aristocats</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
-                  </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <h5 class="mt-0">1970 - The Mouse Factory</h5>
+                  <br>
+                  <p>Disney releases a television series called <span class="italic">The Mouse Factory</span> that displays various Disney cartoons and movies, hosted by celebrity guests visiting the house studio. It also featured several instrumental versions of well-known Disney tracks.</p>
+                  <br>
+                  <div class="timelineImg">
+                    <img src="../assets/mouse_factory.jpg" width="300" fluid alt="Mouse Factory Cover."/>
+                    <p>Mouse Factory Cover</p>
                   </div>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1970 - The Aristocats</h5>
+                  <br>
+                  <p>Disney starts off the 1970s by releasing <span class="italic">The Aristocats</span>, a romantic adventure musical comedy. It sets around a group of cats, a mother and her three kittens, in Paris 1910. They live with a retired opera singer, who decides to leave her fortune to her cats until her death, and only then to her butler Edgar. Edgar overhears this plan and sets out to eliminate the cats, by poisoning their milk and carrying them in a bag to the countryside. When he enters the countryside he is greeted with hounds and the cats are left stranded in the countryside. Meanwhile their owner notices their abscence, along with the other house animals. In the morning Duchess, the mother of the litter finds a stray cat that can lead them to Paris. They hitchhike and cross rivers, filling their adventure with trials. When they reach Paris, they meet Scat Cat and other musicians who perform a music act together for them. After proposing to Duchess, the stray cat Thomas converses with her on the rooftops of Paris where she declines due to loyalty to her owner. Back in the mansion they are again greeted by Edgar who tries again to send them off, but they succeed in calling Thomas and the musicians to their aid. After this Edgar gets locked in his own packaging and sets off in it. Madame adopts Thomas into the family and establishes a foundation for stray cats.</p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/JI7cIYcnTRU" allowfullscreen></b-embed>
+                  </div>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1971 - Disney World</h5>
+                  <br>
+                  <p>The Waltz Disney World Resort in Florida opens to the public.</p>
                 </b-media>
               </b-card>
             </div>
@@ -48,40 +61,11 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">1973 - Robin Hood</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
-                </b-media>
-              </b-card>
-            </div>
-          </li>
-          <li>
-            <div class="timelineElement">
-              <b-card class="timelineCard">
-                <b-media>
-                  <h5 class="mt-0">1977 - Pete's Dragon</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
-                  </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <br>
+                  <p>In 1973 Disney releases <span class="italic">Robin Hood</span>, based around the original legend of the same name but using antropomorphic animals as usual in their animation.</p>
+                  <p>It's fun and romance abound as the swashbuckling hero of Sherwood Forest and his valiant sidekick plot one daring adventure after another to outwit the greedy prince and his partner as they put the tax squeeze on the poor.</p>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/cYB1ajoSYr0" allowfullscreen></b-embed>
                   </div>
                 </b-media>
               </b-card>
@@ -91,14 +75,83 @@
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">1940 - The year of ASDASDAS</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
+                  <h5 class="mt-0">1974 - Winnie the Pooh and Tigger Too</h5>
+                  <br>
+                  <p>The third featurette of the Winnie the Pooh series is released in 1974, featuring Tigger. It popularizes the series mainly because of the iconic soundtrack.</p>
+                  <div class="timelineImg">
+                    <img src="../assets/tigger.jpg" width="400" fluid alt="Mouse Factory Cover."/>
+                    <p>Tigger features as an important character.</p>
+                  </div>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1975 to 1976 - Smaller Projects</h5>
+                  <br>
+                  <p>Disney features two smaller projects, <span class="italic">Escape to Witch Mountain</span> and <span class="italic">Freaky Friday</span>.</p>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1977 - The Rescuers</h5>
+                  <br>
+                  <p>Disney releases their 23rd animated feature film, <span class="italic">The Rescuers</span>. The movie is based on a series of books and sets around a group of mice dedicated to helping abduction victims around the world, two of which go forth to rescue Penny, an orphan girl being held prisoner in Madame Medusa's Devil's Bayou.</p>
+                  <p>The movie reached good critical acclaim and was a box office success</p>
+                  <br>
+                  <div class="timelineImg">
+                    <img src="../assets/The-Rescuers.jpg" width="400" fluid alt="Bianca and Bernard."/>
+                    <p>Bianca and Bernard.</p>
+                  </div>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1977 - Pete's Dragon</h5>
+                  <p>In 1977 Disney releases a new live-action animated movie project called <span class="italic">Pete's Dragon</span>. It sets around an orphan boy in New England in the early 20th century. Pete is a nine-year-old orphan escaping from his brutal adoptive hillbilly parents, the Gogans, with his only friend, a cartoon dragon named Elliott. They successfully escape to Passamaquoddy, Maine, and live with Nora, a lighthouse keeper, and her father, Lampie. Upon his arrival the townspeople start blaming Pete for the scarcity of fish which enrages Elliott, who smashes a schoolhouse as a result. Elliott is sought for medicinal purposes by the corrupt Dr. Terminus, who repeatedly tries to convice Pete to hand over. The movie ends with the duo saving the townspeople from Dr. Terminus' danger and ridding him out of town.</p>
+                  <br>
+                  <div class="timelineImg">
+                    <img src="../assets/petes_dragon.jpg" width="500" fluid alt="Pete and the Dragon"/>
+                    <p>Pete and the Dragon.</p>
+                  </div>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1977 - Winnie the Pooh continued</h5>
+                  <br>
+                  <p>In 1977 Disney also releases <span class="italic">The Many Adventures of Winnie the Pooh</span>, further deepening the franchise.</p>
+                </b-media>
+              </b-card>
+            </div>
+          </li>
+          <li>
+            <div class="timelineElement">
+              <b-card class="timelineCard">
+                <b-media>
+                  <h5 class="mt-0">1979 - First PG-rated movie</h5>
+                  <br>
+                  <p>Disney mixes it up a lot with the release of <span class="italic">The Black Hole</span>. The space opera was the first Disney movie to get a PG-Rating, mainly due to scenes of human death. Besides that all soft curse words were also bleeped out. At the time it was considered too mature for Disney, but despite that it still earning a huge box office turnout.</p>
+                  <br>
+                  <div class="timelineImg">
+                    <img src="../assets/blackhole.gif" width="500" fluid alt="The black hole."/>
+                    <p>Scene aboard the Cygnus.</p>
+                  </div>
                 </b-media>
               </b-card>
             </div>
