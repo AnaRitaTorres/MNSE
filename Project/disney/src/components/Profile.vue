@@ -71,7 +71,7 @@
           <b-card id="film_info">
             <b-row>
               <b-col v-for="item in displayMovies" :key="item.pic + '' + 'mov'" >
-                <b-img v-bind:src="dbURL + 'static/movies/' + item.pic" @click="showModal3(item.name, item.description)" fluid alt="Responsive image" />
+                <b-img class="imagem1" v-bind:src="dbURL + 'static/movies/' + item.pic" @click="showModal3(item.name, item.description)" fluid alt="Responsive image" />
               </b-col>
               <b-modal ref="myModalRef3" hide-footer v-bind:title="coiso.name">
                 <div class="d-block text-md-justify">
@@ -92,7 +92,7 @@
           <b-card id="character_info">
             <b-row>
               <b-col v-for="item in displayCharacters" :key="item.pic + '' + 'char'">
-                <b-img v-bind:src="dbURL + 'static/characters/' + item.pic" @click="showModal3(item.name, item.description)" fluid alt="Responsive image" />
+                <b-img class="imagem2" v-bind:src="dbURL + 'static/characters/' + item.pic" @click="showModal3(item.name, item.description)" fluid alt="Responsive image" />
               </b-col>
             </b-row>
             <div>
@@ -283,6 +283,14 @@ export default {
 .banan{
   max-width: 25%;
   max-height: 25%;
+}
+.imagem1{
+  max-width: 60%;
+  max-height: 60%;
+}
+.imagem2{
+  max-width: 75%;
+  max-height: 75%;
 }
 .righti{
   float: right;
