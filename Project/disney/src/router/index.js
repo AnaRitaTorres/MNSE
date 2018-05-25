@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
+import Search from '@/components/Search'
+import Search2 from '@/components/Search2'
 import Profile from '@/components/Profile'
 import Decade20s from '@/components/Decade20s'
 import Decade30s from '@/components/Decade30s'
@@ -21,6 +23,16 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search
+    },
+    {
+      path: '/lmao',
+      name: 'Search2',
+      component: Search2
     },
     {
       path: '/profile',
