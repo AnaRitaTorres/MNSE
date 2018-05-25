@@ -117,13 +117,13 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">1989 - The Little Mermaid</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
+                  <br>
+                  <p>In 1989 Disney closes off the decade with the movie <span class="italic">The Little Mermaid</span>, based on a Hans Christian Andersen novel that tells the story of a mermaid princess that dreams to become a human.</p>
+                  <p>rebellious 16-year-old mermaid Ariel is fascinated with life on land. On one of her visits to the surface, which are forbidden by her controlling father, King Triton, she falls for a human prince. Determined to be with her new love, Ariel makes a dangerous deal with the sea witch Ursula to become human for three days. But when plans go awry for the star-crossed lovers, the king must make the ultimate sacrifice for his daughter.</p>
+                  <div class="timelineImg">
+                    <img src="../assets/splash.gif" width="500" fluid alt="Ariel."/>
+                    <p>Ariel getting splashed by water</p>
+                  </div>
                 </b-media>
               </b-card>
             </div>
