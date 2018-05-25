@@ -20,24 +20,13 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">2000 - The Emperor's New Groove</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
-                  </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <br>
+                  <p>Disney starts the decade off with a new Animation Feature Film, called <span class="italic">The Emperor's New Groove</span>. Although initially a disappointment, the movie later became a staple of Disney modern animation.</p>
+                  <p>In this animated comedy from the folks at Disney, the vain and cocky Emperor Kuzco is a very busy man. Besides maintaining his "groove", and firing his suspicious administrator, Yzma; he's also planning to build a new waterpark just for himself for his birthday. However, this means destroying one of the villages in his kingdom. Meanwhile, Yzma is hatching a plan to get revenge and usurp the throne. But, in a botched assassination courtesy of Yzma's right-hand man, Kronk, Kuzco is magically transformed into a llama. Now, Kuzco finds himself the property of Pacha, a lowly llama herder whose home is ground zero for the water park. Upon discovering the llama's true self, Pacha offers to help resolve the Emperor's problem and regain his throne, only if he promises to move his water park.</p>
+                  <br>
+                  <div class="timelineImg">
+                    <img src="../assets/groove.gif" width="500" fluid alt="Llama"/>
+                    <p>Kuzco as a llama</p>
                   </div>
                 </b-media>
               </b-card>
@@ -48,13 +37,13 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">2001 - Atlantis: The Lost Empire</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
+                  <br>
+                  <p>Disney releases a movie based on a well known Jules Verne novel, <span class="italic">Atlantis: The Lost Empire</span>. The animated science action film sets around a group of explorers in search of the mythical Atlantis.</p>
+                  <p>Set in 1914, young linguist orphan named Milo Thatch buries himself in books trying to unlock the secret to the destruction of Atlantis. Althouth his theories are ridiculed by his colleagues he is persistent in his dreams of one day discovering the lost isle. His dreams are realized when he is given a spot in an expedition, financed by a friend of his grandfather, to go in search of Atlantis following Milo's guide: The Shepard's Journal. But the Guardians of Atlantis await the explorers putting them in danger at every turn. And the deadly truth about Atlantis's demise puts Milo, the royal family, and all of Atlantis in mortal jeopardy.</p>
+                  <br>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/DeOo19iAJ1E" allowfullscreen></b-embed>
+                  </div>
                 </b-media>
               </b-card>
             </div>
@@ -64,24 +53,13 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">2002 - Lilo & Stitch</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
-                  </p>
-                  <p>
-                    Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <div>
-                    <b-img slot="aside" blank blank-color="#ccc" width="64" alt="placeholder" />
+                  <br>
+                  <p>In 2002 Disney releases an animated science fiction drama called <span class="italic">Lilo & Stich</span>.</p>
+                  <p>The story of a little creature created by genetic experimentation and bound to prison with his evil creator. Stitch escapes and heads for Earth where he tries to impersonate a dog and gets adopted by little Lilo, whom, bent on self preservation, he plans to use as a human shield to protect him for the aliens sent to recapture him. But without a greater purpose in life, no friends, family or memories, Stitch does a little soul searching and begins to understand the meanings of "love" and "family" and his feeling for Lilo begin to change.</p>
+                  <br>
+                  <div class="timelineImg">
+                    <img src="../assets/stitch.jpg" width="500" fluid alt="Stitch"/>
+                    <p>Lilo & Stitch</p>
                   </div>
                 </b-media>
               </b-card>
@@ -92,13 +70,13 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">2003 - Finding Nemo</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
+                  <br>
+                  <p>Disney tells the story of a clownfish named Marlin who, along Dory (a regal blue tang), go on a quest to find his son Nemo. The movie earned a sequel in 2016 (Finding Dory).</p>
+                  <p>A clown fish named Marlin lives in the Great Barrier Reef loses his son, Nemo. After he ventures into the open sea, despite his father's constant warnings about many of the ocean's dangers. Nemo is abducted by a boat and netted up and sent to a dentist's office in Sydney. So, while Marlin ventures off to try to retrieve Nemo, Marlin meets a fish named Dory, a blue tang suffering from short-term memory loss. The companions travel a great distance, encountering various dangerous sea creatures such as sharks, anglerfish and jellyfish, in order to rescue Nemo from the dentist's office, which is situated by Sydney Harbour. While the two are doing this, Nemo and the other sea animals in the dentist's fish tank plot a way to return to Sydney Harbour to live their lives free again.</p>
+                  <br>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/H4BNbHBcnDI" allowfullscreen></b-embed>
+                  </div>
                 </b-media>
               </b-card>
             </div>
@@ -108,30 +86,13 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">2004 - The Incredibles</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
+                  <br>
+                  <p>In 2004 Disney released a computer-animated superhero film called <span class="italic">The Incredibles</span>, produced by Pixar Animation Studios.</p>
+                  <p>Mr. Incredible is a superhero; or he used to be, until a surge of lawsuits against superheroes submitted by the people they've saved forced the government to hide them in witness protection programs so they could lead normal, anonymous lives. Now known exclusively by his secret identity, Bob Parr, he lives with his wife Helen, formerly Elastigirl, and their three children Violet, Dash, and Jack Jack. He works as an insurance claims specialist, and he's fed up with his pushy boss and his immoral profession, but his wife's worked too hard to build a normal life for her family to abide his nostalgia for heroism. When Mr. Incredible's offered the chance to play the role of hero again by a mysterious informant, he jumps at the opportunity, but when it turns out to be a trap set by an old nemesis he had a hand in corrupting, the whole family must reveal themselves to save Mr. Incredible and countless innocents.</p>
                 </b-media>
-              </b-card>
-            </div>
-          </li>
-          <li>
-            <div class="timelineElement">
-              <b-card class="timelineCard">
-                <b-media>
-                  <h5 class="mt-0">2005 - Herbie: Fully Loaded</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
-                </b-media>
+                <div class="video">
+                  <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/t5v2qBBD-gE" allowfullscreen></b-embed>
+                </div>
               </b-card>
             </div>
           </li>
@@ -140,13 +101,13 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">2006 - High School Musical</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
+                  <br>
+                  <p>In 2006 Disney releases the musical <span class="italic">High School Musical</span>. It reaches good acclaim and is an overall success on release.</p>
+                  <p>New Year's Eve - Troy Bolton and Gabriella Montez are at a ski resort during winter break. Troy is a popular basketball player and Gabriella is a girl Einstein. They are forced to sing karaoke together but afterwords exchange numbers. After winter break, Troy returns to his school in Albequerque, New Mexico, where he is surprised to discover Gabriella is a new student. They become friends quickly and decide to audition for the Winter Musical in pairs. They get callbacks, and have upset drama queen Sharpay Evans and her brother Ryan. Troy's friend Chad becomes upset because he is afraid that Troy will become distracted from the basketball championship. Gabriella's friend Taylor wants her on the Decathelon team and is willing to do anything to get her on the team. Chad and Taylor decide to film Troy saying how Gabriella isn't important after Chad tricks him into saying it. Taylor shows the video to Gabriella. Gabriella then refuses to do the callbacks with Troy. Meanwhile, Sharpay and Ryan manipulate the callbacks to the same time as the championship game.</p>
+                  <br>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/gbrbUfYSt0E" allowfullscreen></b-embed>
+                  </div>
                 </b-media>
               </b-card>
             </div>
@@ -156,13 +117,14 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">2007 - Ratatouille</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
+                  <br>
+                  <p>2007 brings a computer-animated drama movie that introduces to the audience the story of Remy, a little mouse in Paris.</p>
+                  <p>Synopse: A rat named Remy dreams of becoming a great French chef despite his family's wishes and the obvious problem of being a rat in a decidedly rodent-phobic profession. When fate places Remy in the sewers of Paris, he finds himself ideally situated beneath a restaurant made famous by his culinary hero, Auguste Gusteau. Despite the apparent dangers of being an unlikely - and certainly unwanted - visitor in the kitchen of a fine French restaurant, Remy's passion for cooking soon sets into motion a hilarious and exciting rat race that turns the culinary world of Paris upside down.</p>
+                  <br>
+                  <div class="timelineImg">
+                    <img src="../assets/rat.jpg" width="500" fluid alt="Remy"/>
+                    <p>Remy</p>
+                  </div>
                 </b-media>
               </b-card>
             </div>
@@ -172,13 +134,13 @@
               <b-card class="timelineCard">
                 <b-media>
                   <h5 class="mt-0">2008 - WALL·E</h5>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                    sollicitudin.
-                  </p>
+                  <br>
+                  <p>Disney presents <span class="italic">Wall-E</span>, a science fiction computer animated film that tells the story of a waste managing robot. It received universal acclaim and several awards, mainly for its effects and overall message.</p>
+                  <p>In the distant future, humans abandon Earth because there is too much trash on it. WALL-E, with habit of picking up everything he finds interesting, lives alone on the planet with a pet cockroach. He has quite a collection of things, from lighters to a working iPod and even a small ring box (without the ring). He even has the last living plant. When a spaceship comes to earth and drops a sleek and dangerous probe EVE to look for a living plant, WALL-E falls in love with her. WALL-E gives her the plant, which makes EVE go into sleep mode. When a spaceship comes to take EVE back, WALL-E too goes with her. What follows is an adventure onboard the Axiom, where people move on hovering chairs and get liquid food which they suck up through a straw. Due to laziness, they have become so fat that they are unable to move. Due to hastily given instructions given to it, auto, the autopilot it tries to get rid of the plant which compels WALL-E, EVE, the pilot and some malfunctioning robots to find a way to retrieve the plant and save the earth.</p>
+                  <br>
+                  <div class="video">
+                    <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/bQEo45izDkw" allowfullscreen></b-embed>
+                  </div>
                 </b-media>
               </b-card>
             </div>
@@ -207,9 +169,9 @@ export default {
     function isElementInViewport (el) {
       var rect = el.getBoundingClientRect()
       return (
-        rect.top + 300 >= 0 &&
+        rect.top + 500 >= 0 &&
         rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom - 300 <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
       )
     }
