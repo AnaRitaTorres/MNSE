@@ -19,7 +19,7 @@ function getMovies(db, sendFunc) {
 }
 
 function getFavouriteMovies(db, id, sendFunc) {
-    var query = 'SELECT Movie.* FROM Movie INNER JOIN FavouriteMovie ON id = idMovie WHERE id = ?';
+    var query = 'SELECT Movie.* FROM Movie INNER JOIN FavouriteMovie ON id = idMovie WHERE idUser = ?';
     db.query(query, id, function (err, results) {
         if (err) {
             sendFunc(err);

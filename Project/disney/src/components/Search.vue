@@ -8,24 +8,40 @@
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
-        <h3 class="decade-header">The 30s</h3>
+        <h3 class="decade-header">Search for {{query}}</h3>
       </div>
       <div class="col-md-1"></div>
     </div>
     <div class="row timeline_section">
+      <div class="col-md-12">
+        <h3 v-if="!success" class="decade-header">Nothing was found :( Try again !</h3>
+      </div>
       <section class="timeline">
-        <ul>
-          <li v-for="item in search" :key="item">
+        <ul  v-for="item in search" :key="item.id + '' + item.type">
+          <li class="in-view">
             <div class="timelineElement">
               <b-card class="timelineCard">
                 <b-media>
-                  <h5 class="mt-0">{{item.name}}</h5>
+                  <h5 v-if="item.type === 'user'" class="banan"> User: {{item.name}} </h5>
+                  <h5 v-if="item.type === 'char'" class="banan"> Character: {{item.name}} </h5>
+                  <h5 v-if="item.type === 'mov'" class="banan"> Movie: {{item.name}} </h5>
                   <br>
-                  {{item.description}}
+                  <div v-if="item.description.length < 100" class="banan">
+                    {{item.description}}
+                  </div>
+                  <div v-if="item.description.length >= 100">
+                    {{item.description}}
+                  </div>
+                  <br>
                   <br>
                   <div class="timelineImg">
                     <img v-bind:src="item.pic" fluid alt="Pic alt"/>
-                    <p>Meter aqui um botão para seguir</p>
+                    <div>
+                      <a v-if="item.type === 'user'" v-bind:href="item.url" class="banan">Check out {{item.name}} profile! </a>
+                      <a v-if="item.type === 'char'" v-on:click="updateCharacters(item.id)" class="banan">Add/Remove {{item.name}} from your list! </a>
+                      <a v-if="item.type === 'mov'" v-on:click="updateMovies(item.id)" class="banan">Add/Remove {{item.name}} from your list! </a>
+                      <h5 class="banan" v-if="errorId === (item.id + '' + item.type)">{{errorMsg}}</h5>
+                    </div>
                   </div>
                 </b-media>
               </b-card>
@@ -44,56 +60,122 @@ export default {
   data () {
     return {
       search: [],
-      success: false
+      query: '',
+      dbURL: 'http://localhost:8420/',
+      success: false,
+      errorId: '',
+      errorMsg: ''
     }
   },
   methods: {
-    getSearch (query) {
+    getSearch () {
       this.success = true
       this.search = []
       let page = this
-      this.$http.get('http://localhost:8420/search?search=' + query).then(
+      this.$http.get(this.dbURL + 'search?search=' + this.query).then(
         function (res) {
+          console.log('oh god')
           if (!res.body.success) {
             page.success = false
             return
           }
           page.search = res.body.content
+          if (page.search.length === 0) {
+            page.success = false
+            return
+          }
+          for (let i = 0; i < page.search.length; i++) {
+            let obj = page.search[i]
+            if (obj.type === 'user') {
+              page.search[i].pic = (obj.pic === null) ? page.dbURL + 'static/default_pic.jpg' : page.dbURL + 'static/users/profile/' + obj.id + '/' + obj.pic
+              page.search[i].url = '/#/profile?id=' + obj.id
+            }
+            if (obj.type === 'char') {
+              page.search[i].pic = page.dbURL + 'static/characters/' + obj.pic
+            }
+            if (obj.type === 'mov') {
+              page.search[i].pic = page.dbURL + 'static/movies/' + obj.pic
+            }
+          }
+        }
+      )
+    },
+    updateMovies (id) {
+      let token = require('../scripts/cookies').getCookie('token')
+      if (token === undefined || token.length <= 0) {
+        this.errorMsg = 'Please log in in order to do that!'
+        this.errorId = id + 'mov'
+        return
+      }
+      let obj = {
+        id: id,
+        token: token
+      }
+      let page = this
+      this.$http.post(this.dbURL + 'auth/addMovie', obj).then(
+        function (res) {
+          if (!res.body.success) {
+            console.log('already added so lets remove')
+            this.$http.post(this.dbURL + 'removeMovie', obj).then(
+              function (res) {
+                if (!res.body.success) {
+                  console.log('oops')
+                  page.errorMsg = 'Error updating movie! pls try again'
+                  page.errorId = id + 'mov'
+                  return
+                }
+                page.errorMsg = 'Movie Removed!'
+                page.errorId = id + 'mov'
+              }
+            )
+            return
+          }
+          page.errorMsg = 'Movie Added!'
+          page.errorId = id + 'mov'
+        }
+      )
+    },
+    updateCharacters (id) {
+      let token = require('../scripts/cookies').getCookie('token')
+      if (token === undefined || token.length <= 0) {
+        this.errorMsg = 'Please log in in order to do that!'
+        this.errorId = id + 'char'
+        return
+      }
+      let obj = {
+        id: id,
+        token: token
+      }
+      let page = this
+      this.$http.post(this.dbURL + 'auth/addCharacter', obj).then(
+        function (res) {
+          if (!res.body.success) {
+            console.log('already added so lets remove')
+            this.$http.post(this.dbURL + 'removeCharacter', obj).then(
+              function (res) {
+                if (!res.body.success) {
+                  console.log('oops')
+                  page.errorMsg = 'Error updating character! pls try again'
+                  page.errorId = id + 'char'
+                  return
+                }
+                page.errorMsg = 'Character Removed!'
+                page.errorId = id + 'char'
+              }
+            )
+            return
+          }
+          page.errorMsg = 'Character Added!'
+          page.errorId = id + 'char'
         }
       )
     }
-  },
-  created () {
-    this.getSearch(this.$route.query.search)
   },
   mounted () {
-    window.scrollTo(0, 0)
-    function isElementInViewport (el) {
-      var rect = el.getBoundingClientRect()
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom - 300 <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      )
-    }
-    var items = document.querySelectorAll('.timeline li')
-    function callbackFunc () {
-      for (var i = 0; i < items.length; i++) items[i].classList.add('in-view')
-      for (i = 0; i < items.length; i++) {
-        if (isElementInViewport(items[i])) {
-          items[i].classList.add('in-view')
-        } else {
-          items[i].classList.remove('in-view')
-        }
-      }
-    }
-    this.$nextTick(function () {
-      window.addEventListener('load', callbackFunc)
-      window.addEventListener('scroll', callbackFunc)
-    })
+    this.query = this.$route.query.id
+    this.getSearch()
   },
-  name: 'Decade30s',
+  name: 'Search',
   components: {
     Header
   }
@@ -106,6 +188,7 @@ export default {
   overflow-x : hidden;
   background-color:  #9AB7D3;
   font: normal 16px/1.5 'Tajawal', sans-serif;
+  min-height: 840px;
 }
 div .timeline_section{
   background: #9AB7D3;
@@ -191,8 +274,15 @@ div .timeline_section{
 .timeline ul li .timelineCard .italic{
   font-style: italic;
 }
-.timeline ul li .timelineCard .timelineImg {
+.timeline ul li .timelineCard .timelineImg, .banan {
   text-align: center;
+}
+a.banan {
+  cursor: pointer;
+}
+.timelineImg img{
+  max-width: 20%;
+  max-height: 20%;
 }
 .decade .decadeRouter a{
   color: #333333;
