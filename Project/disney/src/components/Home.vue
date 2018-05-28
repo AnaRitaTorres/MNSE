@@ -62,7 +62,7 @@ export default {
   data () {
     return {
       state: 1,
-      wheel: ['nope', 'active', 'right', 'none', 'none', 'none', 'none', 'none', 'none', 'left'],
+      wheel: ['nope', 'active', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none'],
       animated: false,
       coiso: true,
       baseStyles: {
@@ -140,6 +140,10 @@ export default {
     position: absolute;
     /*-webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 88%);*/
     /*clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 88%);*/
+  }
+  .none{
+    pointer-events: none;
+    cursor: default;
   }
   .wheelC{
     text-align: center;
